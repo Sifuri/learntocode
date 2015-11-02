@@ -2,7 +2,7 @@
   <div class="inner">
     <div class="left">
       <div class="wrap">
-        <img src="https://secure.gravatar.com/avatar/8afd88ea8f653f95e2588769c2cfab6a?s=400" alt="" />
+        <%= gravatar_for @user, size: 400 %>
         <div class="karma">
           Karma <span class="points">34k</span>
         </div>
@@ -168,11 +168,13 @@
     <div class="right">
       <div class="wrap">
         <h1><%= @user.name %></h1>
-        <div class="contact">
-          <a href="#" class="msg">Send a Message</a>
-          <a href="#" class="msg">Add as a friend</a>
-            <a href="#" class="msg">Invite to Event</a>
-        </div>
+        <% unless current_user? @user %>
+          <div class="contact">
+            <a href="#" class="msg">Send a Message</a>
+            <a href="#" class="msg">Add as a friend</a>
+              <a href="#" class="msg">Invite to Event</a>
+          </div>
+        <% end %>
         <div class="courses">
           <div class="sect">
             <h3>Courses Enrolled in</h3>
