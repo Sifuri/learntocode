@@ -1,4 +1,5 @@
-(function() {
+$(document).ready(function(){
+  (function() {
   var msg = $('.circle .msg');
   var texts = ['Learn', 'Code', 'Connect', 'Discover'];
   var speed = 70;
@@ -52,3 +53,4 @@
   }
 
 })();
+})

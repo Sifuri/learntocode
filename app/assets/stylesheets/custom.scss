@@ -37,9 +37,10 @@ header a {
   color: #fff;
   font-size: 15px;
   font-weight: 100;
-  padding: 20px;
+  
   display: inline-block;
 }
+
 .cont {
   padding: 30px;
   max-width: 1200px;
@@ -388,6 +389,45 @@ header {
   to {
     opacity: 0;
   }
+}
+
+
+.cont {
+ width: 1000px;
+ margin: auto;
+ box-sizing: border-box;
+ padding: 40px;
+ padding-top: 150px;
+ min-height: 400px;
+ margin-bottom: 100px;
+}
+
+.features .feature .img {
+ height: 200px;
+ width: 200px;
+ background-color: #ddd;
+ float: left;
+}
+
+.feature {
+ overflow: auto;
+}
+
+.feature {
+ margin: 30px 0;
+}
+
+.feature:first-of-type {
+ margin-top: 0;
+}
+.features .feature:nth-child(even) .img {
+ float: right;
+}
+
+.features .feature .desc {
+ float: right;
+ width: 700px;
+ margin-top: 50px;
 }
 
 

@@ -7,25 +7,33 @@
 
    <div class="right">
      <%= form_for @user do |f| %>
+       <label>
+         Name: 
+         <%= f.text_field :name %>
+       </label>
+       
 
-       <%= f.label "Name: " %>
-       <%= f.text_field :name %>
-
-       <%= f.label "Email:" %>
+       <label>
+       Email: 
        <%= f.email_field :email %>
+       </label>
 
-       <%= f.label "Password:" %>
-       <%= f.password_field :password %>
+       <label>
+       Password:
+        <%= f.password_field :password %>
+       </label>
 
-       <%= f.label "Password Confirmation:" %>
-       <%= f.password_field :password_confirmation %>
+       <label>
+        Confirm Password:
+        <%= f.password_field :password_confirmation %>
+       </label>
+
       <div class="center">
+
         <%= f.submit "Sign Up" %>
       </div>
      <% end %>
    </div>
-
-
 
 
   <div class="circle">
@@ -35,6 +43,44 @@
       <div class="cir"></div>
     </div>
 </div>
+
 <div class="cont">
-  
+ <div class="features">
+   <div class="feature">
+     <div class="img"></div>
+     <div class="desc">
+       <h3>Heading 1</h3>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet aut, odio? Repudiandae quam quia at atque, error dolor saepe maxime, aperiam, nihil vero fugiat non sit magni obcaecati odio adipisci.</p>
+     </div>
+   </div>
+   
+   <div class="feature">
+     <div class="img"></div>
+     <div class="desc">
+       <h3>Heading 1</h3>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet aut, odio? Repudiandae quam quia at atque, error dolor saepe maxime, aperiam, nihil vero fugiat non sit magni obcaecati odio adipisci.</p>
+     </div>
+   </div>
+   
+   
+   <div class="feature">
+     <div class="img"></div>
+     <div class="desc">
+       <h3>Heading 1</h3>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet aut, odio? Repudiandae quam quia at atque, error dolor saepe maxime, aperiam, nihil vero fugiat non sit magni obcaecati odio adipisci.</p>
+     </div>
+   </div>
+   
+   
+   <div class="feature">
+     <div class="img"></div>
+     <div class="desc">
+       <h3>Heading 1</h3>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet aut, odio? Repudiandae quam quia at atque, error dolor saepe maxime, aperiam, nihil vero fugiat non sit magni obcaecati odio adipisci.</p>
+     </div>
+   </div>
+   
+   
+   
+ </div>
 </div>
