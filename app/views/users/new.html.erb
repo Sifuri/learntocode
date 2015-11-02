@@ -1,0 +1,40 @@
+
+<div class="hero">
+  <div class="left">
+    <h1>Connect & Learn</h1>
+    <h4>Join our community of developers to learn, network, and gain access to the latest news in technology.</h4>
+  </div>
+
+   <div class="right">
+     <%= form_for @user do |f| %>
+
+       <%= f.label "Name: " %>
+       <%= f.text_field :name %>
+
+       <%= f.label "Email:" %>
+       <%= f.email_field :email %>
+
+       <%= f.label "Password:" %>
+       <%= f.password_field :password %>
+
+       <%= f.label "Password Confirmation:" %>
+       <%= f.password_field :password_confirmation %>
+      <div class="center">
+        <%= f.submit "Sign Up" %>
+      </div>
+     <% end %>
+   </div>
+
+
+
+
+  <div class="circle">
+    <div class="msg"></div>
+  </div>
+    <div class="bord">
+      <div class="cir"></div>
+    </div>
+</div>
+<div class="cont">
+  
+</div>

@@ -1,0 +1,33 @@
+<header>
+  <% if user_signed_in? %>
+    <div class="logo"><%= link_to "LearntoCode.tech", root_path %></div>
+    <nav role='navigation'>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Events</a></li>
+        <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
+      </ul>
+    </nav>
+  <% else %>
+
+    <div class="logo"><%= link_to "LearntoCode.tech", root_path %></div>
+
+    <%= form_for :session, url: login_path, :html => {:id => "login"} do |f| %>
+
+      <%= f.label :email  %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit 'Login' %>
+    <% end %>
+
+  <% end %>
+</header>
+
+  
+
+
