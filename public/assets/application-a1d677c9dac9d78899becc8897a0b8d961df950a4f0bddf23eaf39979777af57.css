@@ -1,0 +1,528 @@
+/* line 1, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+body {
+  display: inline-block;
+  min-width: 100%;
+  overflow: auto;
+  background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* line 12, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header {
+  min-width: 1000px;
+  overflow: auto;
+  background-color: #222;
+}
+
+/* line 18, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header .logo {
+  float: left;
+  padding: 9px;
+  margin: 9px;
+  box-sizing: border-box;
+  border: 2px solid #2ff;
+  color: #fff;
+}
+
+/* line 26, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header nav {
+  float: left;
+}
+
+/* line 29, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header #user {
+  float: right;
+}
+
+/* line 32, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header li {
+  display: inline-block;
+}
+
+/* line 35, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 100;
+  padding: 20px;
+  display: inline-block;
+}
+
+/* line 43, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.cont {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* line 48, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.cont .inner {
+  min-height: 500px;
+  background-color: #fff;
+}
+
+/* line 52, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner {
+  display: table;
+  width: 100%;
+}
+
+/* line 56, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left,
+.inner .right {
+  display: table-cell;
+}
+
+/* line 60, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left {
+  width: 30%;
+  background-color: #333;
+  height: 1px;
+}
+
+/* line 65, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .wrap {
+  margin: 20px;
+  height: calc( 100% - 40px);
+}
+
+/* line 69, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left img {
+  box-sizing: border-box;
+  border: 3px solid #2ff;
+  width: 100%;
+}
+
+/* line 74, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .karma {
+  text-align: center;
+  color: #eee;
+  font-weight: 100;
+  padding: 15px;
+  position: relative;
+  border: 4px solid #2ff;
+  border-radius: 1000px;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 20px;
+  line-height: 130px;
+}
+
+/* line 88, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .karma .points {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #2ff;
+  font-weight: 600;
+  font-size: 27px;
+}
+
+/* line 97, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends {
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: calc(100% - 440px);
+}
+
+/* line 103, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends h4 {
+  margin-bottom: 8px;
+}
+
+/* line 106, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends #amount {
+  font-weight: 100;
+  color: #ddd;
+}
+
+/* line 110, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends .ul_wrap {
+  height: 500px;
+  overflow: auto;
+}
+
+/* line 114, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends li {
+  list-style-type: none;
+  padding: 10px 0;
+  font-weight: 100;
+  vertical-align: top;
+  transition: background .5s;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+/* line 123, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 126, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 130, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends img {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+/* line 136, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right {
+  vertical-align: top;
+}
+
+/* line 139, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .wrap {
+  margin: 20px;
+}
+
+/* line 142, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .contact {
+  margin-top: 7px;
+}
+
+/* line 145, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .contact a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  font-weight: 100;
+  padding: 8px 12px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* line 154, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .sect:not(:first-of-type) {
+  margin-top: 19px;
+}
+
+/* line 157, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses {
+  margin-top: 20px;
+}
+
+/* line 160, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses .show_all {
+  width: 100px;
+  padding: 20px;
+  margin: 15px auto;
+  background-color: #333;
+  text-align: center;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 170, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses h3 {
+  font-weight: 600;
+}
+
+/* line 173, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses .course {
+  background-color: #eee;
+  box-sizing: border-box;
+  padding: 16px;
+  margin-bottom: 5px;
+}
+
+/* line 179, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses .course:first-of-type {
+  margin-top: 20px;
+}
+
+/* line 184, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header #login {
+  color: #fff;
+  float: right;
+  padding: 17px;
+}
+
+/* line 189, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header #login label {
+  font-weight: 100;
+  color: #ddd;
+  margin-right: 5px;
+}
+
+/* line 194, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header #login input {
+  font-weight: 100;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: .4px;
+}
+
+/* line 206, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header #login input:active,
+header #login input:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+/* line 211, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header #login input[type='submit'] {
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+}
+
+/* line 217, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.cont {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* line 222, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.cont .inner {
+  min-height: 500px;
+  background-color: #fff;
+}
+
+/* line 226, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.inner {
+  display: table;
+  width: 100%;
+}
+
+/* line 230, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero {
+  background-color: #222;
+  height: 564px;
+  position: relative;
+}
+
+/* line 235, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right {
+  /* border-left: 1px solid #333; */
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translate(0%, -50%);
+}
+
+/* line 245, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right .signupPrompt {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  width: 200px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+/* line 256, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right:after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to top, #22ffff 0%, #22ffff 29%, #333333 80%);
+}
+
+/* line 265, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right form {
+  width: 400px;
+  margin: auto;
+  color: #fff;
+  overflow: auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* line 273, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right form input[type='submit'] {
+  font-size: 15px;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #2ff;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 20px;
+  width: 200px;
+}
+
+/* line 284, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right form > label {
+  display: block;
+  padding: 9px 5px;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* line 290, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right form > label input {
+  font-size: 18px;
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  float: right;
+  padding: 8px;
+}
+
+/* line 299, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .circle,
+.hero .bord {
+  transition: top .3s;
+}
+
+/* line 303, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .circle {
+  z-index: 1;
+  border: 5px solid #2ff;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  line-height: 200px;
+  background-color: #000;
+  border-radius: 1000px;
+  color: #2ff;
+  font-size: 1.6rem;
+  box-shadow: 0 0 50px rgba(34, 255, 255, 0.8);
+}
+
+/* line 320, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .circle .msg::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  background-color: #2ff;
+  height: 30px;
+  animation: blink .4s infinite alternate;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+}
+
+/* line 331, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.center {
+  text-align: center;
+}
+
+/* line 334, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hide {
+  display: none;
+}
+
+/* line 337, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.bord {
+  animation: rotate 20s infinite linear;
+  height: 300px;
+  padding: 20px;
+  position: absolute;
+  width: 40px;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+/* line 348, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.bord .cir {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  background-color: #2ff;
+  border-radius: 1000px;
+}
+
+/* line 358, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+header {
+  border-bottom: 1px solid #191919;
+}
+
+/* line 361, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .left {
+  float: left;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 60px;
+}
+
+/* line 368, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .left h1 {
+  color: #fff;
+}
+
+/* line 371, /Users/wayne/Desktop/learntocode/app/assets/stylesheets/custom.scss */
+.hero .left h4 {
+  color: #2ff;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
