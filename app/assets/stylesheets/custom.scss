@@ -435,3 +435,293 @@ header {
 }
 
 
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.abs_center {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+body {
+  display: inline-block;
+  min-width: 100%;
+  overflow: auto;
+  background-color: #E4E4E4;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Header start */
+header {
+  min-width: 1000px;
+  overflow: auto;
+  background-color: #222;
+}
+header .logo {
+  float: left;
+  padding: 9px;
+  margin: 9px;
+  box-sizing: border-box;
+  border: 2px solid #2ff;
+  color: #fff;
+}
+header #login {
+  color: #fff;
+  float: right;
+  padding: 17px;
+}
+header #login label {
+  font-weight: 100;
+  color: #ddd;
+  margin-right: 5px;
+}
+header #login input {
+  font-weight: 100;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: .4px;
+}
+header #login input:active,
+header #login input:focus {
+  background-color: #fff;
+  color: #000;
+}
+header #login input[type='submit'] {
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+}
+/* Header end */
+
+.hero  {
+  height: 464px;
+  background-color: #1A1F27;
+  position: relative;
+}
+
+.hero h3 .color {
+  color: #2ff;
+}
+.hero h3 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 3rem;
+  width: 700px;
+  text-align: center;
+}
+
+.hero .search {
+  color: #fff;
+  padding: 29px;
+  background-color: #333;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 720px;
+  transform: translate(-50%,-50%);
+}
+
+.hero .search select {
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+
+.hero #online_only {
+  color: #fff;
+  margin: 0 10px;
+}
+
+.hero #online_only  input {
+  position: relative; 
+  top: -2px;
+}
+
+span.mySelect {
+  position: relative;
+  cursor: pointer;
+  margin: 0 7px;
+  color: #2ff;
+  border-bottom: 1px dashed #ddd;
+}
+
+.hover_menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, 0 );
+  background-color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  display: inline-block;
+  display: none;
+}
+
+.hover_menu > div {
+  white-space: nowrap;
+  padding: 6px;
+}
+
+.hover_menu > div:hover  {
+  background-color: #333;
+}
+
+.search select[name='distance'] {
+  margin-left: 10px;
+}
+
+.search input[type='text'] {
+  padding: 8px;
+  font-size: 15px;
+  outline-color: #2ff;
+  margin: 0 10px;
+}
+.search input[type='submit'] {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #299;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 20px;
+}
+.cont {
+  width: 1000px;
+  margin: auto;
+}
+.events {
+  font-size: 0;
+  border-top: 2px solid #2ff;
+  margin-top: 100px;
+}
+
+.event {
+  overflow: hidden;
+  display: inline-block;
+  width: 291px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  height: 300px;
+  color: #fff;
+  background-color: #fff;
+  position: relative;
+}
+.event > * {
+  position: relative;
+  z-index: 2;
+  font-size: 1rem;
+}
+.event .img{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #444;
+  z-index:0;
+}
+.event .desc {
+  padding: 15px;
+  background-color: rgba(0,0,0,.4);
+  text-overflow: ellipsis;
+  max-height: 140px;
+  overflow: hidden;
+}
+.event .title {
+  margin-top: 245px;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: rgba(0,0,0,.4);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 22px;
+  transition: margin .5s;
+}
+
+.event:hover .title {
+  margin-top: 135px;
+}
+
+.event .rooms {
+  background-color: rgba(0,0,0,.4);
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-weight: 100;
+  text-align: center;
+  border-radius: 1000px;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: transform .4s,opacity .4s;
+}
+.event:hover  .rooms {
+  transform: translate(-50%,-50%) scale(1.5,1.5);
+  opacity: 0;
+  background-color: #2ff;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination li {
+  display: inline-block;
+  padding: 10px;
+  margin: 15px;
+}
+
+
+.pagination li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.pagination li.active {
+  display: inline-block;
+  padding: 10px;
+  margin: 15px;
+  background-color: #fff;
+  border: 1px solid #2ff;
+}
+input.search_bar {
+    position: absolute;
+    left: 50%;
+    top: 310px;
+    font-size: 1.4rem;
+    transform: translateX(-50%);
+    font-weight: 1fs00;
+    padding: 10px;
+    width: 290px;
+    background-color: rgba(0,0,0,.1);
+    border: 1px solid #2ff;
+    color: #fff;
+    outline: none;
+  
+}
+
+
