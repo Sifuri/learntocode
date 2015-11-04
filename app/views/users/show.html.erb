@@ -46,3 +46,24 @@
     </div>
   </div>
 </div>
+
+
+<div class="notification_box">
+  <div class="dialog">
+<% current_user.inverse_requests.each do |req| %>
+
+  <% @req = req %>
+    <div class="user"> 
+      <div class="img"><%= link_to (gravatar_for req.user, size: 35 ), req.user %></div>
+      <div class="name"><%= link_to req.user.name, req.user %></div>
+      
+      <div class="btns">
+
+        <div class="accept"><%= render 'accept_form' %></div>
+        <div class="decline"><%= render 'decline_form' %></div>
+
+      </div>
+    </div>
+<% end %>
+  </div>
+</div>

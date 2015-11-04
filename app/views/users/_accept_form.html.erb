@@ -1,0 +1,9 @@
+<%= form_for(current_user.friends.build(connection_id: @req.user_id)) do |f| %>
+		<div><%= hidden_field_tag :connection_id, value = @req.user_id %></div>
+
+		<%= f.submit "Accept", class: "accept" %>
+<% end %>
+
+
+
+

@@ -1,8 +1,11 @@
-<h4>Friends <span id='amount'>(50)</span></h4>
-          <div class="ul_wrap">
-          <ul>
-            <li>
-              <a href=""><img src="https://secure.gravatar.com/avatar/8afd88ea8f653f95e2588769c2cfab6a?s=400" alt="" />friend 1</a>
-            </li>
-          </ul>
-          </div>
+<h4>Friends <span id='amount'>(<%= @user.friends.count %>)</span></h4>
+<div class="ul_wrap">
+<ul>
+<% total_friends= @user.friends.map {|f| f.connection } + @user.inverse_friends.map {|f| f.user } %>
+<% total_friends.each do |f| %>
+	<li>
+	<%= link_to gravatar_for(f, size: 400) + f.name, f %>
+	</li>
+<% end %>
+</ul>
+</div>
