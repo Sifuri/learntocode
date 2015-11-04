@@ -729,3 +729,73 @@ input.search_bar {
 }
 
 
+/* --- Notification Box --- */
+
+.notification_box {
+    display: none;
+    z-index: 99999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 100%;
+}
+
+.notification_box .user {
+    padding: 9px;
+    margin: 11px;
+    border-radius: 3px;
+    overflow: auto;
+    border: 1px solid #aaa;
+    line-height: 35px;
+}
+
+.notification_box .img {
+    height: 35px;
+    width: 35px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.notification_box .name a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.notification_box .name {
+    margin-left: 6px;
+}
+
+.notification_box .img,
+.notification_box .name {
+    float: left;
+}
+
+.notification_box .btns input {
+    background-color: #F55F4E;
+    padding: 8px 9px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    border-radius: 2px;
+    color: #fff;
+}
+
+.notification_box .btns > div:last-of-type input {
+    background-color: #DEDEDE;
+    color: #000;
+}
+
+.notification_box .btns {
+    margin-right: 6px;
+    float: right;
+}
+
+.notification_box .btns > div {
+    display: inline-block;
+}
+
+
+

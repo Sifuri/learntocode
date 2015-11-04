@@ -1,4 +1,4 @@
-<h4>Friends <span id='amount'>(<%= @user.friends.count %>)</span></h4>
+<h4>Friends <span id='amount'>(<%= @user.friends.count + @user.inverse_friends.count %>)</span></h4>
 <div class="ul_wrap">
 <ul>
 <% total_friends= @user.friends.map {|f| f.connection } + @user.inverse_friends.map {|f| f.user } %>
