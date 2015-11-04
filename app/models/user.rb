@@ -31,14 +31,23 @@ class User < ActiveRecord::Base
 	has_many :inverse_req_connections, :through => :inverse_requests, :source => :user
 
 	# Message Relations
-	has_many :messages 
+	has_many :user_messages
+	has_many :messages, through: :user_messages
+
+	has_many :messages_given, class_name: "UserMessage", 
+							 	foreign_key: "giver_id",
+							 	dependent: :destroy 
+
+	has_many :messages_received, class_name: "UserMessage",
+								 foreign_key: "receiver_id",
+								 dependent: :destroy 
 
 
 	# Bootcamp Relations
 	has_many :bootcamps
 
 
-
+	# Request methods
 
 	def cancel_request(other_user)
 		inverse_requests.find_by(user_id: other_user.id).destroy 
@@ -52,6 +61,8 @@ class User < ActiveRecord::Base
 		requests.create(connection_id: other_user.id)
 	end
 
+	# Friends methods 
+
 	def accept_friendship(other_user)
 		friends.create(connection_id: other_user.id)
 		cancel_request other_user
@@ -60,4 +71,15 @@ class User < ActiveRecord::Base
 	def are_friends_with?(other_user)
 		friends.find_by(connection_id: other_user.id) || inverse_friends.find_by(user_id: other_user.id)
 	end
+
+	# Message Methods
+
+	def give_message(other_user, msg)
+		messages_given.create(receiver_id: other_user.id, message_id: msg.id)
+	end
+
+	def remove_message(other_user)
+		messages_given.find_by(receiver_id: other_user.id).destroy
+	end
+
 end

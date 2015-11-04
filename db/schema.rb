@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20151103232224) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.string   "subject"
+    t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,8 +80,10 @@ ActiveRecord::Schema.define(version: 20151103232224) do
   end
 
   create_table "user_messages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "giver_id"
+    t.integer  "receiver_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

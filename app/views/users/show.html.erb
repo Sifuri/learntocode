@@ -24,9 +24,11 @@
           </div>
           <% else %>
           <div class="contact">
-            <a href="#" class="msg">Messages</a>
-            <a href="#" class="msg">Friend Requests</a>
-              <a href="#" class="msg">Invitations</a>
+          <% total_messages = @user.messages_received.count %>
+          <% total_friend_req = @user.inverse_requests.count %>
+            <a href="#" class="msg">Messages (<%= total_messages %>)</a>
+            <a href="#" class="msg"> Friend Requests (<%= total_friend_req %>)</a>
+              <a href="#" class="msg">Invitations (0)</a>
           </div>
 
         <% end %>
