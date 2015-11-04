@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
 	                    uniqueness: { case_sensitive: false }
 	validates :password, presence: true, length: { minimum: 6 }
 
-	
 
 	has_secure_password
 
@@ -30,4 +29,35 @@ class User < ActiveRecord::Base
 	has_many :req_connections, :through => :requests
 	has_many :inverse_requests, :class_name => "Request", :foreign_key => "connection_id"
 	has_many :inverse_req_connections, :through => :inverse_requests, :source => :user
+
+	# Message Relations
+	has_many :messages 
+
+
+	# Bootcamp Relations
+	has_many :bootcamps
+
+
+
+
+	def cancel_request(other_user)
+		inverse_requests.find_by(user_id: other_user.id).destroy 
+	end
+
+	def made_requests?(other_user)
+		requests.find_by(connection_id: other_user.id) || inverse_requests.find_by(user_id: other_user.id)
+	end
+
+	def request_friendship(other_user)
+		requests.create(connection_id: other_user.id)
+	end
+
+	def accept_friendship(other_user)
+		friends.create(connection_id: other_user.id)
+		cancel_request other_user
+	end
+
+	def are_friends_with?(other_user)
+		friends.find_by(connection_id: other_user.id) || inverse_friends.find_by(user_id: other_user.id)
+	end
 end

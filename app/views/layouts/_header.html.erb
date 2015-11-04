@@ -1,17 +1,13 @@
 <header>
   <% if user_signed_in? %>
     <div class="logo"><%= link_to "LearntoCode.tech", root_path %></div>
-    <nav role='navigation'>
-      <ul>
-        <li><a href="#">Home</a></li>
+
+    <nav id="user">
+        <ul>
         <li><a href="#">Courses</a></li>
         <li><a href="#">News</a></li>
         <li><%= link_to "Events", events_path %></li>
-      </ul>
-    </nav>
-    <nav id="user">
-        <ul>
-          <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
+        <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
         </ul>
       </nav>
   <% else %>

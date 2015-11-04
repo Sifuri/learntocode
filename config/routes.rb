@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users
   resources :events
+  resources :requests, only: [:create, :destroy]
+  resources :friends, only: [:create, :destroy]
 
   root 'users#new'
 
