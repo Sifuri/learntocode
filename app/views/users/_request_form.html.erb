@@ -1,0 +1,12 @@
+<% unless current_user? @user  %>
+	<% if current_user.are_friends_with? @user %>
+	 <a href="#" class="msg">Friends</a>
+	<% elsif current_user.made_requests? @user %>
+		<a href="#" class="msg">Friendship Pending..</a>
+	<% else %>
+		<%= form_for(current_user.requests.build(connection_id: @user.id)) do |f| %>
+		<div><%= hidden_field_tag :connection_id, value = @user.id %></div>
+		<%= f.submit "Add Friend"%>
+		<% end %>
+	<% end %>
+<% end %>
