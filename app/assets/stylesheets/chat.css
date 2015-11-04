@@ -1,0 +1,65 @@
+.msg_box {
+	display: none;
+	position: absolute;
+	height: 350px;
+	width: 390px;
+	border: 1px solid #2ff;
+	outline: 3px solid #333;
+	left: 50%;
+	top: calc( 100% + 8px );
+	transform: translateX(-50%);
+	background-color: #333;
+}
+
+.msg_box::before {
+	content: '';
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 10px solid transparent;
+	border-bottom-color: #2ff;
+}
+.msg_btn {
+	position: relative;
+}
+
+
+
+.msg_box .msg img {
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+	float: left;
+}
+
+.msg_box .msg:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+.msg_box .msg {
+	margin: 5px;
+	padding: 8px;
+	box-sizing: border-box;
+	color: #fff;
+	background-color: rgba(0,0,0,.3);
+}
+.msg_box .msg:hover {
+	background-color: rgba(255,255,255,.3);
+}
+
+.msg_box .txt {
+    height: 44px;
+    overflow: hidden;
+
+	width: 80%;
+    padding: 0 0 0 8px;
+	float: left;
+	font-size: 12px;
+	font-weight: 100;
+
+}

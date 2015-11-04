@@ -11,9 +11,11 @@ body {
 }
 header {
   min-width: 1000px;
-  overflow: auto;
   background-color: #222;
 }
+
+
+
 
 header .logo {
   float: left;
@@ -462,9 +464,22 @@ body {
 /* Header start */
 header {
   min-width: 1000px;
-  overflow: auto;
+
   background-color: #222;
 }
+
+
+
+header:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+
+
 header .logo {
   float: left;
   padding: 9px;
