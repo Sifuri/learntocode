@@ -27,8 +27,8 @@
           <% total_messages = @user.messages_received.count %>
           <% total_friend_req = @user.inverse_requests.count %>
             <a href="#" class="msg">Messages (<%= total_messages %>)</a>
-            <a href="#" class="msg"> Friend Requests (<%= total_friend_req %>)</a>
-              <a href="#" class="msg">Invitations (0)</a>
+            <a href="#" class="frdreqs"> Friend Requests (<%= total_friend_req %>)</a>
+              <a href="#" class="invtreqs">Invitations (0)</a>
           </div>
 
         <% end %>
@@ -52,21 +52,39 @@
 
 <div class="notification_box">
   <div class="dialog">
-<% current_user.inverse_requests.each do |req| %>
+      <div class='tabs'>
+        <h3>Friend Requests</h3>
+        <h3>Invites to Events</h3>
+      </div>
+      <div class='view'>
+              <div class='friends_reqs sect'>
+              <% r = current_user.inverse_requests %> 
+                <% if r.size < 1 %>
+                  <p class="nothing">No Friend Requests</p>
+                <% else %>
+                    <% current_user.inverse_requests.each do |req| %>
 
-  <% @req = req %>
-    <div class="user"> 
-      <div class="img"><%= link_to (gravatar_for req.user, size: 35 ), req.user %></div>
-      <div class="name"><%= link_to req.user.name, req.user %></div>
-      
-      <div class="btns">
+                      <% @req = req %>
+                        <div class="user"> 
+                          <div class="img"><%= link_to (gravatar_for req.user, size: 35 ), req.user %></div>
+                          <div class="name"><%= link_to req.user.name, req.user %></div>
+                          
+                          <div class="btns">
 
-        <div class="accept"><%= render 'accept_form' %></div>
-        <div class="decline"><%= render 'decline_form' %></div>
+                            <div class="accept"><%= render 'accept_form' %></div>
+                            <div class="decline"><%= render 'decline_form' %></div>
+
+                          </div>
+                        </div>
+                  <% end %> 
+                <% end %> 
+              </div>
+          
+          <div class='invites_reqs sect'>
+              <p class="nothing">No invites</p>
+          </div>
 
       </div>
-    </div>
-<% end %>
   </div>
 </div>
 

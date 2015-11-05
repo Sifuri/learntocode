@@ -1,3 +1,4 @@
+
 .msg_box {
 	display: none;
 	position: absolute;
@@ -62,4 +63,66 @@
 	font-size: 12px;
 	font-weight: 100;
 
+}
+
+
+.chat {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+.chat .window.clone {
+	display: none;
+}
+.chat .window {
+	position: absolute;
+	bottom: 0;
+	right: 50px;
+	width: 280px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+}
+.chat .window .close{ 
+	top: 0;
+    position: absolute;
+    right: 0;
+    padding: 7px 10px;
+    color: #888;
+}
+
+.chat .window .close:hover{ 
+    color: #2ff;
+    cursor: pointer;
+}
+
+
+
+.chat .window:hover .title  {
+	box-sizing: border-box;
+	border-bottom: 2px solid #2ff;
+}
+.chat .title {
+	cursor: pointer;
+	padding: 8px;
+	color: #fff;
+	background-color: #333;
+	border: 1px solid #000;
+}
+
+.chat .msgs {
+	height: 268px;
+	background-color: #fff;
+}
+.chat .wrap {
+	height: 300px;
+}
+
+.chat input[type='text'] {
+	border: 1px solid #ddd;
+	outline: none;
+	font-size: 12px;
+    padding: 8px 5px;
+    width: 100%;
+    box-sizing: border-box;
 }
