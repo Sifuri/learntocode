@@ -464,7 +464,10 @@ body {
 /* Header start */
 header {
   min-width: 1000px;
-
+    position: relative;
+    min-width: 1000px;
+    background-color: #222;
+    z-index: 99;
   background-color: #222;
 }
 
