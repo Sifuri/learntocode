@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  get 'chat/get' 
+  get 'chat/send'
+
+
+
+
+  
   resources :users
   resources :events
   resources :requests, only: [:create, :destroy]

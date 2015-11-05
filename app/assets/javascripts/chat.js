@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	alert(3);
 	var msg_btn = $('.msg_btn');
 	var msg_box = $('.msg_box');
 	var box_state = false;
@@ -32,12 +33,18 @@ $(document).ready(function(){
 	function show_msg_box() {
 		msg_box.show();
 	}
-
 	var chatController = new ChatController();
+	var storageController = new StorageController(chatController);
 	window.c = chatController;
 
 }); 
 
+
+function StorageController(c) {
+	this.save = function(){
+
+	}
+}
 
 
 function ChatController() {
@@ -47,6 +54,8 @@ function ChatController() {
 	this.close_window = closeWindow;
 	this.chat = $('.chat');
 	this.delete_left_window = delete_left_window;
+
+
 
 	function createWindow(user) {
 		if (this.open_windows.length >= this.max_windows) {
@@ -104,7 +113,6 @@ function ChatWindow(open_windows, user) {
 	this.y = open_windows.length*310+50;
 	this.userId = user.id;
 	this.title = user.name
-	this.msgs = user.msgs;
 	this.ele;
 	this.state = 'open';
 }
