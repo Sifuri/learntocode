@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	alert(3);
 	var msg_btn = $('.msg_btn');
 	var msg_box = $('.msg_box');
 	var box_state = false;
