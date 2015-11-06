@@ -3,7 +3,7 @@
   <h3>Go to Tech Events <span class="color">Together</span></h3>
   <input placeholder='search' class="search_bar"></input>
 
-  <%= form_tag(events_path), remote: true do %>
+  <%= form_tag(events_path) do %>
     <%= select_tag "event[topic]", "<option>Tech</option>".html_safe %>
     <%= text_field_tag "event[zip]", "Enter Zip" %>
     <%= select_tag "event[distance]", "<option>2</option><option>5</option><option>10</option><option>25</option><option>50</option><option>50</option><option>Any Distance</option>".html_safe %>

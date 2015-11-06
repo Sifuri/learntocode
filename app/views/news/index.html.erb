@@ -1,9 +1,10 @@
 
-
-
+<h1> Hackernews </h1>
 <ul>
+<% @news.each do |e| %>
 	<li>
-		<i id="score">score</i>
-		<a href="#" id="article_a">article</a>
+		<%= link_to "#{e.link.title}", e.link.href  %>
 	</li>
+<% end %>
 </ul>
+

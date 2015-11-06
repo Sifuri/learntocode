@@ -44,5 +44,7 @@ end
 
 gem 'meetup_client'
 
+gem 'ruby-hackernews'
+
 gem 'pry'
 
