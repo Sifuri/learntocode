@@ -2,11 +2,13 @@ $(document).ready(function(){
 	var msg_btn = $('.msg_btn');
 	var msg_box = $('.msg_box');
 	var box_state = false;
+	var msg_btn_2 = $('.msg');
 
 	msg_btn.click(toggleBox);
+	msg_btn_2.click(toggleBox);
 
 	$('body').click(function(e){
-		if ($(e.target).is($("header, header *"))) {
+		if ($(e.target).is($("header, header *")) || $(e.target).is($('.msg, .msg *'))) {
 			return;
 		}
 		if (box_state) {

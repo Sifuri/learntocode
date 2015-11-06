@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
 
+
   get 'chat/get' 
   get 'chat/send'
 
-
-
-
-  
   resources :users
   resources :events
+  resources :news, only: [:index]
   resources :requests, only: [:create, :destroy]
   resources :friends, only: [:create, :destroy]
 
   root 'users#new'
-
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

@@ -6,7 +6,7 @@
 	<% else %>
 		<%= form_for(current_user.requests.build(connection_id: @user.id)) do |f| %>
 			<%= hidden_field_tag :connection_id, value = @user.id %>
-			<%= f.submit "Add Friend" %>
+			<%= f.submit "Add Friend", class: 'addF' %>
 		<% end %>
 	<% end %>
 <% end %>
