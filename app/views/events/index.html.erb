@@ -2,17 +2,25 @@
 <div class="hero">
   <h3>Go to Tech Events <span class="color">Together</span></h3>
   <input placeholder='search' class="search_bar"></input>
+
+  <%= form_tag(events_path), remote: true do %>
+    <%= select_tag "event[topic]", "<option>Tech</option>".html_safe %>
+    <%= text_field_tag "event[zip]", "Enter Zip" %>
+    <%= select_tag "event[distance]", "<option>2</option><option>5</option><option>10</option><option>25</option><option>50</option><option>50</option><option>Any Distance</option>".html_safe %>
+    <%= submit_tag "Submit" %>
+  <% end %>
+
   <div class="search">
     <select name='options'>
-      <option value='option-1'>All</option>
-      <option value='option-2'>Design</option>
-      <option value='option-3'>Programming</option>
+      <option value='option-1'>Tech</option>
     </select>
+
     <label id='online_only'>
       <input type="checkbox" /> Online Only</label>
    <label><input id = 'city' type="text" placeholder='City Here' /></label>
     within
  
+
     <select name='distance'>
       <option value='1'>1 mile</option>
       <option value='2'>2 miles</option>
@@ -21,21 +29,22 @@
       <option value='50'>50 miles</option>
     </select>
     <input type="submit" />
-  <!--  <span data-current='5'  data-options="distance" class="mySelect"></span> 
-    of 
-    <span data-current='Brooklyn, Ny'  data-options="location" class="mySelect"></span>-->
   </div>
-
 </div>
 
 <div class="cont">
   <div class="events">
+  <% @events.each do |e| %>
     <div class="event">
-      <div class="title">Title eenejeje ie e ej ejegoes here</div>
-      <div class="desc">this event is awesome, you should really try to join it bro, i am telling you, this is the best one around... yooooooo listen</div>
-      <div class="img"></div>
+    
+      <div class="title"><%= e["name"] %></div>
+      <div class="desc"><%= e["description"] %></div>
+      <div class="img"><img src=  %> /></div>
       <div class="rooms">3</div>
+  
+
     </div>
+     <% end %>
   </div>
   
   
@@ -47,3 +56,6 @@
     <li>5</li>
   </ul>
 </div>
+
+
+

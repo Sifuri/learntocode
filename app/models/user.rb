@@ -46,6 +46,9 @@ class User < ActiveRecord::Base
 	# Bootcamp Relations
 	has_many :bootcamps
 
+	# Comment Relations
+	has_many :comments
+
 
 	# Request methods
 
