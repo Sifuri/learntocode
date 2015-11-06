@@ -50,6 +50,11 @@ class User < ActiveRecord::Base
 	has_many :comments
 
 
+	# Invitation Relations 
+	has_many :invitations 
+	
+
+
 	# Request methods
 
 	def cancel_request(other_user)

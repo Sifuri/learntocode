@@ -2,11 +2,10 @@
 	<ul id='news'>
 	<% @news.each do |e| %>
 		<li>
-			<%= link_to "#{e.link.title}", e.link.href  %>
+			<%= link_to "#{e.title}", e.url  %>
 		</li>
 	<% end %>
 	</ul>
-
 
 
 </div>
