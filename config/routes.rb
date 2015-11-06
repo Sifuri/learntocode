@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'news/index'
 
   resources :users
   resources :events
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
 
   root 'users#new'
 
-  get ':userId?page=(:params)'
+  # get ':userId?page=(:params)'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
