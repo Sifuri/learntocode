@@ -162,6 +162,23 @@ nav li a {
   display: inline-block;
   border-radius: 2px;
 }
+.inner .right .contact form {
+  display: inline-block;
+}
+
+.inner .right .contact .addF {
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+ background: #333;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 100;
+  padding: 8px 12px;
+  display: inline-block;
+  font-size: 16px;
+
+}
 .inner .right .sect:not(:first-of-type) {
   margin-top: 19px;
 }
