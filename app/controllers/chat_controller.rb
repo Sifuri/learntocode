@@ -10,16 +10,16 @@ class ChatController < ApplicationController
   	render :json => current_user.messages_received.where("created_at > ?", latest).where(giver_id: id).map { |msg| {msg: msg.message.subject, latest: msg.message.created_at } }
   end
 
-  def send
-  	user = User.find_by_id params[:to]
-  	unless user
-  		render []
-  		return 
-	end
+ #  def send
+ #  	user = User.find_by_id params[:to]
+ #  	unless user
+ #  		render []
+ #  		return 
+	# end
 
-  	msg = Message.create(subject: params[:msg])
-  	current_user.give_message(user,msg)
-	render :nothing => true, :status => 200, :content_type => 'text/html'
-  end
+ #  	msg = Message.create(subject: params[:msg])
+ #  	current_user.give_message(user,msg)
+	# render :nothing => true, :status => 200, :content_type => 'text/html'
+ #  end
 
 end
