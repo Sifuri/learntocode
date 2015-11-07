@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-
+  
   get 'chat/get' 
   get 'chat/send' => "chat#sendMsg"
 
