@@ -11,6 +11,7 @@ class CreateEvents < ActiveRecord::Migration
       t.float :latitude 
       t.string :city 
       t.string :state
+      t.string :url
 
       t.timestamps null: false
     end

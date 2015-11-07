@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20151106154659) do
     t.float    "latitude"
     t.string   "city"
     t.string   "state"
+    t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

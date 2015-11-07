@@ -4,10 +4,12 @@ class Event < ActiveRecord::Base
 
 	def self.get_events
 		meetup_api = MeetupApi.new
-		meetup_api.open_events({category: 34, venue_visibility: "public"})["results"].each do |e|
-			Event.create(title: e["name"], desc: e["description"], city: e["venue"]["city"], state: e["venue"["state"]]) if e["venue"]
+		meetup_api.open_events({category: 34})["results"].each do |e|
+			Event.create(title: e["name"], desc: e["description"], city: e["venue"]["city"], state: e["venue"]["state"],
+				url: meetup_api.groups({group_id: e["group"]["id"]})["results"][0]["group_photo"]["highres_link"]) if e["venue"]
 		end
 	end
 end
 
-			# event_photo: meetup_api.groups({group_id: e["group"]["id"]})["group_photo"]["highres_link"]
+			# # event_photo: meetup_api.groups({group_id: e["group"]["id"]})["group_photo"]["highres_link"]
+			# meetup_api.groups({group_id:8123202})["results"][0]["group_photo"]["highres_link"]
