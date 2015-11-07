@@ -12,7 +12,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :city 
       t.string :state
       t.string :url
-      t.string :group_id
+      t.integer :group_id
+      t.integer :rsvp
 
       t.timestamps null: false
     end

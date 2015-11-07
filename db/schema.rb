@@ -44,7 +44,8 @@ ActiveRecord::Schema.define(version: 20151106154659) do
     t.string   "city"
     t.string   "state"
     t.string   "url"
-    t.string   "group_id"
+    t.integer  "group_id"
+    t.integer  "rsvp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
