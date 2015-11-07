@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 20151106154659) do
     t.integer  "zip"
     t.string   "topic"
     t.string   "distance"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "city"
+    t.string   "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

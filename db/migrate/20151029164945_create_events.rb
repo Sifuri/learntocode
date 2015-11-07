@@ -7,6 +7,10 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :zip
       t.string :topic
       t.string :distance
+      t.float :longitude
+      t.float :latitude 
+      t.string :city 
+      t.string :state
 
       t.timestamps null: false
     end
