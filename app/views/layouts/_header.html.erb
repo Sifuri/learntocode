@@ -4,6 +4,7 @@
      <% all_msgs = (current_user.messages_received + current_user.messages_given) %>
      <% grouped = groupMsgs(all_msgs) %>
      var msgs = '<%= grouped.to_json.html_safe  %>';
+     msgs = msgs || [];
      var im = {};
      im.id = '<%= current_user.id %>';
      im.name = '<%= current_user.name %>';

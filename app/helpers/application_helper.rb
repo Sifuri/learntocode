@@ -9,7 +9,7 @@ module ApplicationHelper
 	        else 
 	          id = msg.giver_id;
 	        end
-	        msg = { :about => msg, :content => Message.find(msg[:message_id])[:content] }
+	        msg = { :about => msg, :content => Message.find(msg[:message_id])[:content].gsub("'","\\'") }
 	        grouped[id.to_s.to_sym] ||=  []
 	        grouped[id.to_s.to_sym] << msg
 
