@@ -1,8 +1,12 @@
 $(document).ready(function(){
+
+
+
 	var msg_btn = $('.msg_btn');
 	var msg_box = $('.msg_box');
 	var box_state = false;
 	var msg_btn_2 = $('.msg');
+	var send_btn = $('.send_msg');
 
 	msg_btn.click(toggleBox);
 	msg_btn_2.click(toggleBox);
@@ -38,7 +42,17 @@ $(document).ready(function(){
 	var storageController = new StorageController(chatController);
 	window.c = chatController;
 
-}); 
+	send_btn.click(function(){
+		//open if not open
+		var open = chatController.open_windows.some(function(e){
+			if (e.userId == +other_user.id) return true;
+		});
+		if (!open) {
+			chatController.create_window(new User(other_user.name, other_user.id, other_user.msgs))
+		}
+	});
+
+
 
 
 function StorageController(c) {
@@ -53,6 +67,7 @@ function ChatController() {
 	this.open_windows = [];
 	this.create_window = createWindow;
 	this.close_window = closeWindow;
+	this.send_message = sendMessage;
 	this.chat = $('.chat');
 	this.delete_left_window = delete_left_window;
 
@@ -71,6 +86,7 @@ function ChatController() {
 		c.find('.title').text(w.title);
 		c.find('.title').click(titleClick.bind(this, w));
 		c.find('.close').click(closeClick.bind(this, w));
+		c.find('input').bind("keypress", {w: w}, sendMessage)
 		this.chat.append( c );
 	}
 
@@ -84,8 +100,28 @@ function ChatController() {
 		this.close_window(this.max_windows -1);
 	}
 
+
 }
 
+	// chatController.open_windows.filter(function(w){
+	// 	return w.userId == id;
+	// });
+
+function addMessage(w,msg,self) {
+	var m = $("<div>");
+	m.text(msg);
+	if(self) m.addClass('self');
+	w.ele.find('.msgs').append(m);
+}
+
+function sendMessage(e) {
+	if (e.which == 13 && $(this).val().trim().length>0) {
+		var msg = $(this).val();
+		addMessage(e.data.w, msg, true);
+    	$(this).val('');
+    	return false;    //<---- Add this line
+ 	}
+}
 
 function closeClick(w) {
 	this.close_window(this.open_windows.indexOf(w));
@@ -134,3 +170,18 @@ function deleteFromArray(arr, ele) {
 	    arr.splice(index,  1);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}); 

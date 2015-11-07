@@ -18,7 +18,7 @@
         <h1><%= @user.name %></h1>
         <% unless current_user? @user %>
           <div class="contact">
-            <a href="#" class="msg">Send a Message</a>
+            <a href="#" class="send_msg">Send a Message</a>
             <%= render 'request_form' %>
             <a href="#" class="msg">Invite to Event</a>
           </div>

@@ -48,3 +48,4 @@ gem 'ruby-hackernews'
 
 gem 'pry'
 
+gem 'rails_12factor', group: :production
