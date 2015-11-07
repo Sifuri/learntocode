@@ -2,6 +2,10 @@ class Event < ActiveRecord::Base
 	has_many :user_events
 	has_many :users, through: :user_events
 
+	def self.search(params)
+		all.where("lower(title) LIKE ?", params[:q].downcase+"%") if params[:q]
+	end
+
 	def self.get_events
 		meetup_api = MeetupApi.new
 		meetup_api.open_events({category: 34})["results"].each do |e|
