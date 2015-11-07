@@ -23,7 +23,9 @@ module ApplicationHelper
 	    	grouped[k] = {
 	    		:user => {
 	    			:gravatar => gravatar_url_only(user),
-	    			:profile => user_path(user)
+	    			:profile => user_path(user),
+	    			:name => user.name,
+	    			:id => user.id
 	    		},
 	    		:msgs => sorted
 	    	}
