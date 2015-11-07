@@ -7,6 +7,8 @@
      var im = {};
      im.id = '<%= current_user.id %>';
      im.name = '<%= current_user.name %>';
+  <% end %>
+  <% if @user %>
      var other_user = {};
       other_user.name = "<%= @user.name  %>";
       other_user.id = "<%= @user.id  %>";
