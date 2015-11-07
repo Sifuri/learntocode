@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  get 'chat/get' 
+  get 'chat/send' => "chat#sendMsg"
+
   resources :users
   resources :events
   resources :news, only: [:index]
@@ -7,8 +11,6 @@ Rails.application.routes.draw do
   resources :friends, only: [:create, :destroy]
 
   root 'users#new'
-
-  # get ':userId?page=(:params)'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

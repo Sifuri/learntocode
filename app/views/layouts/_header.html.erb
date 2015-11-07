@@ -1,4 +1,19 @@
 <header>
+  <script>
+   <% if current_user %>
+     <% all_msgs = (current_user.messages_received + current_user.messages_given) %>
+     <% grouped = groupMsgs(all_msgs) %>
+     var msgs = '<%= grouped.to_json.html_safe  %>';
+     var im = {};
+     im.id = '<%= current_user.id %>';
+     im.name = '<%= current_user.name %>';
+     var other_user = {};
+      other_user.name = "<%= @user.name  %>";
+      other_user.id = "<%= @user.id  %>";
+      other_user.msgs = []; //work on it
+    <% end %>
+  </script>
+
   <% if user_signed_in? %>
     <div class="logo"><%= link_to "LearntoCode.tech", root_path %></div>
 
@@ -7,22 +22,11 @@
         <li class='msg_btn'>
           <a href="#">Messages</a>
           <div class="msg_box">
-            <div class="msg">
+
+           <div class="msg hide">
               <img src="https://secure.gravatar.com/avatar/8afd88ea8f653f95e2588769c2cfab6a">
               <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni autem sed, molestiae tenetur distinctio possimus ut beatae ipsum. Id, incidunt harum totam quisquam est, nostrum. Quam hic unde eius facilis.</div>
             </div>
-
-             <div class="msg">
-              <img src="https://secure.gravatar.com/avatar/8afd88ea8f653f95e2588769c2cfab6a">
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni autem sed, molestiae tenetur distinctio possimus ut beatae ipsum. Id, incidunt harum totam quisquam est, nostrum. Quam hic unde eius facilis.</div>
-            </div>
-
-
-             <div class="msg">
-              <img src="https://secure.gravatar.com/avatar/8afd88ea8f653f95e2588769c2cfab6a">
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni autem sed, molestiae tenetur distinctio possimus ut beatae ipsum. Id, incidunt harum totam quisquam est, nostrum. Quam hic unde eius facilis.</div>
-            </div>
-
             
           </div>
         </li>
@@ -48,6 +52,8 @@
     <% end %>
 
   <% end %>
+
+
 </header>
 
   
