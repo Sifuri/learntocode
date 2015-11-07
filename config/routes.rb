@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   get 'chat/get' 
-  get 'chat/send'
+  get 'chat/send' => "chat#sendMsg"
 
   resources :users
   resources :events

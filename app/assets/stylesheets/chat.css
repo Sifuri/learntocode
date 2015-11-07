@@ -113,6 +113,21 @@
 .chat .msgs {
 	height: 268px;
 	background-color: #fff;
+	overflow: auto;
+}
+
+.chat .msgs .msg {
+    padding: 9px;
+    border-radius: 3px;
+    background-color: #eee;
+    float: left;
+    clear: both;
+    margin: 4px 5px;
+}
+
+.chat .msgs .msg.self {
+	float: right;
+	background-color: #2ff;
 }
 .chat .wrap {
 	height: 300px;

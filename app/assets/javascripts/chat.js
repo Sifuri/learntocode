@@ -1,12 +1,28 @@
 $(document).ready(function(){
 
 
-
 	var msg_btn = $('.msg_btn');
 	var msg_box = $('.msg_box');
 	var box_state = false;
 	var msg_btn_2 = $('.msg');
 	var send_btn = $('.send_msg');
+	var msgsObj = JSON.parse(msgs);
+	var clonemsg = msg_box.find('.msg');
+
+	init();
+
+	function init() {
+		for(var k in msgsObj) {
+			console.log(msgsObj);
+			var grav_url = msgsObj[k].user.gravatar;
+			var last_msg = msgsObj[k].msgs[msgsObj[k].msgs.length-1].content
+			var cloned = clonemsg.clone().removeClass('hide');
+			cloned.find('img')[0].src = grav_url;
+			cloned.find('.txt').text(last_msg);
+
+			msg_box.append(cloned);
+		}
+	}
 
 	msg_btn.click(toggleBox);
 	msg_btn_2.click(toggleBox);
@@ -49,6 +65,11 @@ $(document).ready(function(){
 		});
 		if (!open) {
 			chatController.create_window(new User(other_user.name, other_user.id, other_user.msgs))
+		} else {
+			var w = chatController.open_windows.filter(function(e){
+					if (e.userId == +other_user.id) return true;
+				})[0];
+			openMsgWindow(w);
 		}
 	});
 
@@ -109,9 +130,12 @@ function ChatController() {
 
 function addMessage(w,msg,self) {
 	var m = $("<div>");
+	m.addClass('msg')
 	m.text(msg);
 	if(self) m.addClass('self');
-	w.ele.find('.msgs').append(m);
+	var msgs = w.ele.find('.msgs');
+	msgs.append(m);
+	msgs.scrollTop(msgs.height());
 }
 
 function sendMessage(e) {
@@ -119,22 +143,33 @@ function sendMessage(e) {
 		var msg = $(this).val();
 		addMessage(e.data.w, msg, true);
     	$(this).val('');
-    	return false;    //<---- Add this line
+
+    	$.get('/chat/send?to='+e.data.w.userId+'&msg='+msg);
  	}
 }
 
 function closeClick(w) {
 	this.close_window(this.open_windows.indexOf(w));
 }
+
+
 function titleClick(w) {
 	if (w.state == 'open') {	
-		w.ele.find('.wrap').hide();
-		w.state = 'close';
+		closeMsgWindow(w);
 	} else if (w.state == 'close') {	
-		w.ele.find('.wrap').show();
-		w.state = 'open';
+		openMsgWindow(w);
 	} 
+}
 
+
+function openMsgWindow(w) {
+	w.ele.find('.wrap').show();
+	w.state = 'open';
+}
+
+function closeMsgWindow(w) {
+	w.ele.find('.wrap').hide();
+	w.state = 'close';
 }
 
 
@@ -170,13 +205,6 @@ function deleteFromArray(arr, ele) {
 	    arr.splice(index,  1);
 	}
 }
-
-
-
-
-
-
-
 
 
 
