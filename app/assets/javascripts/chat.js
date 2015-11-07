@@ -27,7 +27,7 @@ $(document).ready(function() {
       cloned.find('.txt').text(last_msg);
       cloned.attr('data-user', user.id);
       cloned.click(msg_item_click.bind(this, user, msgsObj[k].msgs));
-      
+
       msg_box.append(cloned);
     }
   }
@@ -56,6 +56,7 @@ $(document).ready(function() {
 	  			w.msg_id = data[data.length-1].msg_id;
 	  			data.forEach(function(msgData){
 	  				addMessage(w,msgData.msg);
+            updateLastMsg(w.userId, msg);
 	  			});
 	  		});
   		});
@@ -99,11 +100,13 @@ $(document).ready(function() {
     var open = chatController.open_windows.some(function(e) {
       if (e.userId == +other_user.id) return true;
     });
+    var user = msgsObj[+other_user.id].user;
+
     if (!open) {
-      chatController.create_window(new User(other_user.name, other_user.id, other_user.msgs))
+      chatController.create_window(new User(user.name, user.id, msgsObj[user.id].msgs))
     } else {
       var w = chatController.open_windows.filter(function(e) {
-        if (e.userId == +other_user.id) return true;
+        if (e.userId == +user.id) return true;
       })[0];
       openMsgWindow(w);
     }
