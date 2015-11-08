@@ -56,10 +56,18 @@
         </div>
       </div>
       <div class="comment_sect">
+
         <div class="input_sect">
+          
+        <%= form_for([@event, @event.comments.build]) do |f| %>
           <textarea rows="4" cols="100">Leave a comment</textarea>
-          <input type="submit" />
+          <%= f.submit "Submit" %>
+        <% end %>
         </div>
+
+
+
+
         <div class="comments">
           <div class="comment">
             <div class="user">techsin</div>

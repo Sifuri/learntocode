@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
 	has_many :user_events
 	has_many :users, through: :user_events
 
-	has_many :comments, through: :users 
+	has_many :comments
 
 	def self.search(params)
 		all.where("lower(title) LIKE ?", params[:q].downcase+"%") if params[:q]

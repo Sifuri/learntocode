@@ -1,0 +1,2188 @@
+
+.msg_box {
+	display: none;
+	position: absolute;
+	height: 350px;
+	width: 390px;
+	border: 1px solid #2ff;
+	outline: 3px solid #333;
+	left: 50%;
+	top: calc( 100% + 8px );
+	transform: translateX(-50%);
+	background-color: #333;
+}
+
+.msg_box::before {
+	content: '';
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 10px solid transparent;
+	border-bottom-color: #2ff;
+}
+.msg_btn {
+	position: relative;
+}
+
+
+
+.msg_box .msg img {
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+	float: left;
+}
+
+.msg_box .msg:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+.msg_box .msg {
+	margin: 5px;
+	padding: 8px;
+	box-sizing: border-box;
+	color: #fff;
+	background-color: rgba(0,0,0,.3);
+}
+.msg_box .msg:hover {
+	background-color: rgba(255,255,255,.3);
+}
+
+.msg_box .txt {
+    height: 44px;
+    overflow: hidden;
+
+	width: 80%;
+    padding: 0 0 0 8px;
+	float: left;
+	font-size: 12px;
+	font-weight: 100;
+
+}
+
+
+.chat {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+.chat .window.clone {
+	display: none;
+}
+.chat .window {
+	position: absolute;
+	bottom: 0;
+	right: 50px;
+	width: 280px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+}
+.chat .window .close{ 
+	top: 0;
+    position: absolute;
+    right: 0;
+    padding: 7px 10px;
+    color: #888;
+}
+
+.chat .window .close:hover{ 
+    color: #2ff;
+    cursor: pointer;
+}
+
+
+
+.chat .window:hover .title  {
+	box-sizing: border-box;
+	border-bottom: 2px solid #2ff;
+}
+.chat .title {
+	cursor: pointer;
+	padding: 8px;
+	color: #fff;
+	background-color: #333;
+	border: 1px solid #000;
+}
+
+.chat .msgs {
+	height: 268px;
+	background-color: #fff;
+	overflow: auto;
+}
+
+.chat .msgs .msg {
+    padding: 9px;
+    border-radius: 3px;
+    background-color: #eee;
+    float: left;
+    clear: both;
+    margin: 4px 5px;
+}
+
+.chat .msgs .msg.self {
+	float: right;
+	background-color: #2ff;
+}
+.chat .wrap {
+	height: 300px;
+}
+
+.chat input[type='text'] {
+	border: 1px solid #ddd;
+	outline: none;
+	font-size: 12px;
+    padding: 8px 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* line 1, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+body {
+  display: inline-block;
+  min-width: 100%;
+  overflow: auto;
+  background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* line 14, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header {
+  min-width: 1000px;
+  background-color: #222;
+}
+
+/* line 19, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header .logo {
+  float: left;
+  padding: 9px;
+  margin: 9px;
+  box-sizing: border-box;
+  border: 2px solid #2ff;
+  color: #fff;
+}
+
+/* line 28, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header .logo a {
+  font-size: 20px;
+}
+
+/* line 32, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header nav {
+  float: left;
+}
+
+/* line 36, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #user {
+  float: right;
+}
+
+/* line 40, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header li {
+  display: inline-block;
+}
+
+/* line 44, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 100;
+  display: inline-block;
+}
+
+/* line 52, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+nav li a {
+  padding: 20px;
+}
+
+/* line 56, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.cont {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* line 62, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.cont .inner {
+  min-height: 500px;
+  background-color: #fff;
+}
+
+/* line 67, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner {
+  display: table;
+  width: 100%;
+}
+
+/* line 72, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left,
+.inner .right {
+  display: table-cell;
+}
+
+/* line 77, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left {
+  width: 30%;
+  background-color: #333;
+  height: 1px;
+}
+
+/* line 83, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .wrap {
+  margin: 20px;
+  height: calc( 100% - 40px);
+}
+
+/* line 88, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left img {
+  box-sizing: border-box;
+  border: 3px solid #2ff;
+  width: 100%;
+}
+
+/* line 94, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .karma {
+  text-align: center;
+  color: #eee;
+  font-weight: 100;
+  padding: 15px;
+  position: relative;
+  border: 4px solid #2ff;
+  border-radius: 1000px;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 20px;
+  line-height: 130px;
+}
+
+/* line 109, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .karma .points {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #2ff;
+  font-weight: 600;
+  font-size: 27px;
+}
+
+/* line 119, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends {
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: calc(100% - 440px);
+}
+
+/* line 126, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends h4 {
+  margin-bottom: 8px;
+}
+
+/* line 130, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends #amount {
+  font-weight: 100;
+  color: #ddd;
+}
+
+/* line 135, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends .ul_wrap {
+  height: 500px;
+  overflow: auto;
+}
+
+/* line 140, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends li {
+  list-style-type: none;
+  padding: 10px 0;
+  font-weight: 100;
+  vertical-align: top;
+  transition: background .5s;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+/* line 150, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 154, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 159, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .left .friends img {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+/* line 166, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right {
+  vertical-align: top;
+}
+
+/* line 170, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .wrap {
+  margin: 20px;
+}
+
+/* line 174, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .contact {
+  margin-top: 7px;
+}
+
+/* line 178, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .contact a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  font-weight: 100;
+  padding: 8px 12px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* line 188, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .contact form {
+  display: inline-block;
+}
+
+/* line 192, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .contact .addF {
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  background: #333;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 100;
+  padding: 8px 12px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* line 205, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .sect:not(:first-of-type) {
+  margin-top: 19px;
+}
+
+/* line 209, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses {
+  margin-top: 20px;
+}
+
+/* line 213, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses .show_all {
+  width: 100px;
+  padding: 20px;
+  margin: 15px auto;
+  background-color: #333;
+  text-align: center;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 224, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses h3 {
+  font-weight: 600;
+}
+
+/* line 228, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses .course {
+  background-color: #eee;
+  box-sizing: border-box;
+  padding: 16px;
+  margin-bottom: 5px;
+}
+
+/* line 235, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner .right .courses .course:first-of-type {
+  margin-top: 20px;
+}
+
+/* line 239, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login {
+  color: #fff;
+  float: right;
+  padding: 17px;
+}
+
+/* line 245, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login label {
+  font-weight: 100;
+  color: #ddd;
+  margin-right: 5px;
+}
+
+/* line 251, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login input {
+  font-weight: 100;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: .4px;
+}
+
+/* line 264, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login input:active,
+header #login input:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+/* line 270, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login input[type='submit'] {
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+}
+
+/* line 277, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.cont {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* line 283, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.cont .inner {
+  min-height: 500px;
+  background-color: #fff;
+}
+
+/* line 288, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.inner {
+  display: table;
+  width: 100%;
+}
+
+/* line 293, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero {
+  background-color: #222;
+  height: 564px;
+  position: relative;
+}
+
+/* line 299, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right {
+  /* border-left: 1px solid #333; */
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translate(0%, -50%);
+}
+
+/* line 310, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right .signupPrompt {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  width: 200px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+/* line 322, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right:after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to top, #22ffff 0%, #22ffff 29%, #333333 80%);
+}
+
+/* line 332, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right form {
+  width: 400px;
+  margin: auto;
+  color: #fff;
+  overflow: auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* line 341, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right form input[type='submit'] {
+  font-size: 15px;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #2ff;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 20px;
+  width: 200px;
+}
+
+/* line 353, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right form > label {
+  display: block;
+  padding: 9px 5px;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* line 360, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .right form > label input {
+  font-size: 18px;
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  float: right;
+  padding: 8px;
+}
+
+/* line 370, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .circle,
+.hero .bord {
+  transition: top .3s;
+}
+
+/* line 375, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .circle {
+  z-index: 1;
+  border: 5px solid #2ff;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  line-height: 200px;
+  background-color: #000;
+  border-radius: 1000px;
+  color: #2ff;
+  font-size: 1.6rem;
+  box-shadow: 0 0 50px rgba(34, 255, 255, 0.8);
+}
+
+/* line 393, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .circle .msg::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  background-color: #2ff;
+  height: 30px;
+  animation: blink .4s infinite alternate;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+}
+
+/* line 405, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.center {
+  text-align: center;
+}
+
+/* line 409, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hide {
+  display: none;
+}
+
+/* line 413, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.bord {
+  animation: rotate 20s infinite linear;
+  height: 300px;
+  padding: 20px;
+  position: absolute;
+  width: 40px;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+/* line 425, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.bord .cir {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  background-color: #2ff;
+  border-radius: 1000px;
+}
+
+/* line 436, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header {
+  border-bottom: 1px solid #191919;
+}
+
+/* line 440, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .left {
+  float: left;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 60px;
+}
+
+/* line 448, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .left h1 {
+  color: #fff;
+}
+
+/* line 452, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .left h4 {
+  color: #2ff;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* line 476, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.cont {
+  width: 1000px;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 40px;
+  padding-top: 150px;
+  min-height: 400px;
+  margin-bottom: 100px;
+}
+
+/* line 486, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.features .feature .img {
+  height: 200px;
+  width: 200px;
+  background-color: #ddd;
+  float: left;
+}
+
+/* line 493, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.feature {
+  overflow: auto;
+}
+
+/* line 497, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.feature {
+  margin: 30px 0;
+}
+
+/* line 501, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.feature:first-of-type {
+  margin-top: 0;
+}
+
+/* line 505, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.features .feature:nth-child(even) .img {
+  float: right;
+}
+
+/* line 509, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.features .feature .desc {
+  float: right;
+  width: 700px;
+  margin-top: 50px;
+}
+
+/* line 515, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 520, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.abs_center {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+/* line 527, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+body {
+  display: inline-block;
+  min-width: 100%;
+  overflow: auto;
+  background-color: #E4E4E4;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Header start */
+/* line 538, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header {
+  min-width: 1000px;
+  position: relative;
+  min-width: 1000px;
+  background-color: #222;
+  z-index: 99;
+  background-color: #222;
+}
+
+/* line 547, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* line 556, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header .logo {
+  float: left;
+  padding: 9px;
+  margin: 9px;
+  box-sizing: border-box;
+  border: 2px solid #2ff;
+  color: #fff;
+}
+
+/* line 565, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login {
+  color: #fff;
+  float: right;
+  padding: 17px;
+}
+
+/* line 571, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login label {
+  font-weight: 100;
+  color: #ddd;
+  margin-right: 5px;
+}
+
+/* line 577, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login input {
+  font-weight: 100;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: .4px;
+}
+
+/* line 590, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login input:active,
+header #login input:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+/* line 596, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+header #login input[type='submit'] {
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+}
+
+/* Header end */
+/* line 606, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero {
+  height: 464px;
+  background-color: #1A1F27;
+  position: relative;
+}
+
+/* line 612, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero h3 .color {
+  color: #2ff;
+}
+
+/* line 616, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero h3 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 3rem;
+  width: 700px;
+  text-align: center;
+}
+
+/* line 628, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .search {
+  color: #fff;
+  padding: 29px;
+  background-color: #333;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 720px;
+  transform: translate(-50%, -50%);
+}
+
+/* line 639, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero .search select {
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+/* line 647, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero #online_only {
+  color: #fff;
+  margin: 0 10px;
+}
+
+/* line 652, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hero #online_only input {
+  position: relative;
+  top: -2px;
+}
+
+/* line 657, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+span.mySelect {
+  position: relative;
+  cursor: pointer;
+  margin: 0 7px;
+  color: #2ff;
+  border-bottom: 1px dashed #ddd;
+}
+
+/* line 665, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hover_menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  display: inline-block;
+  display: none;
+}
+
+/* line 678, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hover_menu > div {
+  white-space: nowrap;
+  padding: 6px;
+}
+
+/* line 683, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hover_menu > div:hover {
+  background-color: #333;
+}
+
+/* line 687, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.search select[name='distance'] {
+  margin-left: 10px;
+}
+
+/* line 691, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.search input[type='text'] {
+  padding: 8px;
+  font-size: 15px;
+  outline-color: #2ff;
+  margin: 0 10px;
+}
+
+/* line 698, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.search input[type='submit'] {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #299;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+/* line 709, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.cont {
+  width: 1080px;
+  margin: auto;
+}
+
+/* line 714, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.events {
+  font-size: 0;
+  border-top: 2px solid #2ff;
+  margin-top: 100px;
+}
+
+/* line 720, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.event {
+  overflow: hidden;
+  display: inline-block;
+  width: 291px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  height: 300px;
+  color: #fff;
+  background-color: #fff;
+  position: relative;
+}
+
+/* line 732, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.event > * {
+  position: relative;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+/* line 738, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.event .img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #444;
+  z-index: 0;
+}
+
+/* line 748, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.event .desc {
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-overflow: ellipsis;
+  max-height: 140px;
+  overflow: hidden;
+}
+
+/* line 756, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.event .title {
+  margin-top: 245px;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 22px;
+  transition: margin .5s;
+}
+
+/* line 768, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.event:hover .title {
+  margin-top: 135px;
+}
+
+/* line 772, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.event .rooms {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-weight: 100;
+  text-align: center;
+  border-radius: 1000px;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform .4s, opacity .4s;
+}
+
+/* line 789, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.event:hover .rooms {
+  transform: translate(-50%, -50%) scale(1.5, 1.5);
+  opacity: 0;
+  background-color: #2ff;
+}
+
+/* line 795, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.pagination {
+  text-align: center;
+}
+
+/* line 799, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.pagination li {
+  display: inline-block;
+  padding: 10px;
+  margin: 15px;
+}
+
+/* line 805, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.pagination li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 810, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.pagination li.active {
+  display: inline-block;
+  padding: 10px;
+  margin: 15px;
+  background-color: #fff;
+  border: 1px solid #2ff;
+}
+
+/* line 818, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+input.search_bar {
+  position: absolute;
+  left: 50%;
+  top: 310px;
+  font-size: 1.4rem;
+  transform: translateX(-50%);
+  font-weight: 1fs00;
+  padding: 10px;
+  width: 290px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid #2ff;
+  color: #fff;
+  outline: none;
+}
+
+/* line 833, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+}
+
+/* line 842, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .dialog {
+  max-height: 50%;
+  position: absolute;
+  top: 50%;
+  width: 400px;
+  left: 50%;
+  height: 300px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* line 855, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .user a {
+  text-decoration: none;
+  font-weight: 100;
+  color: #2ff;
+}
+
+/* line 861, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .user {
+  overflow: auto;
+  background-color: #333;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+/* line 870, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .user .name {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* line 875, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .user > * {
+  float: left;
+}
+
+/* line 879, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .user .btns {
+  float: right;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+/* line 885, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .user .btns input:hover {
+  background-color: #2ff;
+}
+
+/* line 889, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .user .btns input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  color: #fff;
+  background-color: #288;
+}
+
+/* line 897, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .tabs {
+  border-bottom: 1px solid #888;
+  text-align: center;
+}
+
+/* line 902, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .tabs h3 {
+  text-align: center;
+  font-weight: 100;
+  display: inline-block;
+  width: 43%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  border-bottom: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* line 915, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .tabs h3:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+/* line 920, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .tabs h3.active {
+  background-color: #333;
+  color: #2ff;
+}
+
+/* line 925, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .sect {
+  margin-bottom: 20px;
+}
+
+/* line 929, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.notification_box .nothing {
+  padding: 20px;
+  text-align: center;
+}
+
+/* line 934, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta::before {
+  z-index: 99;
+  content: '';
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  width: 400px;
+  background-color: #555;
+}
+
+/* line 947, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta {
+  position: relative;
+  width: 1000px;
+  margin: auto;
+  min-height: 300px;
+  margin-top: 50px;
+}
+
+/* line 955, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .hero_meet {
+  z-index: 2;
+  background-color: #333;
+  height: 340px;
+  position: relative;
+}
+
+/* line 962, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .hero_meet .title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  max-width: 300px;
+}
+
+/* line 974, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.nav_meet ul {
+  overflow: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+/* line 979, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.nav_meet li {
+  float: left;
+  padding: 13px 20px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+/* line 986, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.nav_meet li:hover {
+  font-weight: 600;
+}
+
+/* line 990, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.nav_meet li.active {
+  font-weight: 600;
+}
+
+/* line 994, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .main {
+  overflow: auto;
+}
+
+/* line 998, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .main .left,
+.conta .main .right {
+  min-height: 700px;
+}
+
+/* line 1003, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .main .left {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 25px;
+}
+
+/* line 1010, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .events {
+  padding-top: 10px;
+}
+
+/* line 1014, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event {
+  height: 150px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* line 1020, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event > * {
+  z-index: 10;
+  position: relative;
+}
+
+/* line 1025, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event .img {
+  z-index: 1;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 1035, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event .title {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 1044, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event .location {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  color: #fff;
+  background-color: #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* line 1055, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event:hover {
+  outline: 1px solid #2ff;
+}
+
+/* line 1059, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .main .right {
+  padding: 25px;
+  float: right;
+  width: 30%;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* line 1068, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.left .about_view .info {
+  margin-bottom: 40px;
+}
+
+/* line 1072, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.main .left .stats {
+  text-align: center;
+  margin-top: 100px;
+  border-top: 1px solid #aaa;
+  padding-top: 80px;
+}
+
+/* line 1079, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.main .left .stats > * {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+}
+
+/* line 1087, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room {
+  background-color: #333;
+  border: 1px solid #2ff;
+  padding: 8px;
+  color: #fff;
+  overflow: auto;
+  margin-bottom: 15px;
+}
+
+/* line 1096, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room:hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+/* line 1103, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room:hover .stat {
+  color: #333;
+}
+
+/* line 1107, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room .title {
+  float: left;
+  width: 500px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 1115, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room .stat {
+  float: right;
+  color: #2ff;
+}
+
+/* line 1120, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.main .left .stats .num {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 1000px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #2ff;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+/* line 1133, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect {
+  margin-top: 50px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* line 1139, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect textarea {
+  font-size: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+/* line 1149, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect input[type='submit'] {
+  background-color: #333;
+  color: #fff;
+  float: right;
+  margin: 15px 0;
+  padding: 15px 20px;
+  display: block;
+  border: none;
+}
+
+/* line 1159, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect .user {
+  color: blue;
+  margin-bottom: 10px;
+}
+
+/* line 1164, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect .comments {
+  border-top: 1px solid #888;
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+/* line 1170, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect .comment {
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+/* line 1178, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect .time {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* line 1183, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.showMore {
+  width: 110px;
+  background-color: #333;
+  color: #fff;
+  font-weight: 100;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* line 1195, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view input {
+  display: block;
+}
+
+/* line 1199, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view .title {
+  font-size: 17px;
+  padding: 9px;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+/* line 1207, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view .desc {
+  padding: 9px;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+  height: 300px;
+  font-size: 15px;
+}
+
+/* line 1216, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view #total {
+  font-size: 15px;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+/* line 1222, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view input[type='submit'] {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 15px;
+  text-align: center;
+  width: 150px;
+  background-color: #333;
+  color: #fff;
+  font-size: 15px;
+  margin: auto;
+}
+
+/* line 1235, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hide {
+  display: none;
+}
+
+/* Dont delete from no duplicate beyond this point */
+/* line 1242, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+#news {
+  padding: 40px;
+  background-color: #555;
+  width: 1000px;
+  margin: auto;
+  border: 3px solid #2ff;
+  margin-top: 50px;
+  counter-reset: section;
+}
+
+/* line 1252, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+#news li {
+  list-style: none;
+}
+
+/* line 1257, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+#news a::before {
+  counter-increment: section;
+  content: counter(section) ". ";
+}
+
+/* line 1262, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+#news li a {
+  padding: 10px 15px;
+  color: #444;
+  text-decoration: none;
+  background-color: #FFF;
+  display: block;
+  margin: 5px 0;
+  font-size: 13px;
+  font-weight: 100;
+  transition: background-color .5s, color .5s;
+}
+
+/* line 1274, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+#news li a:hover {
+  color: #2ff;
+  background-color: #333;
+}
+
+/* line 1280, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.news_cont {
+  background-color: #222;
+  overflow: auto;
+}
+
+/*--- Events - ShowPage ---- */
+/* line 1290, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta::before {
+  z-index: 99;
+  content: '';
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  width: 400px;
+  background-color: #555;
+}
+
+/* line 1302, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta {
+  position: relative;
+  width: 1000px;
+  margin: auto;
+  min-height: 300px;
+  margin-top: 50px;
+}
+
+/* line 1310, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .hero_meet {
+  z-index: 2;
+  background-color: #333;
+  height: 340px;
+  position: relative;
+}
+
+/* line 1318, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .hero_meet .title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  max-width: 300px;
+}
+
+/* line 1329, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.nav_meet ul {
+  overflow: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+/* line 1333, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.nav_meet li {
+  float: left;
+  padding: 13px 20px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+/* line 1339, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.nav_meet li:hover {
+  font-weight: 600;
+}
+
+/* line 1342, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.nav_meet li.active {
+  font-weight: 600;
+}
+
+/* line 1346, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .main {
+  overflow: auto;
+}
+
+/* line 1350, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .main .left, .conta .main .right {
+  min-height: 700px;
+}
+
+/* line 1354, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .main .left {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 25px;
+}
+
+/* line 1360, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .events {
+  padding-top: 10px;
+}
+
+/* line 1363, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event {
+  height: 150px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* line 1368, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event > * {
+  z-index: 10;
+  position: relative;
+}
+
+/* line 1372, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event .img {
+  z-index: 1;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 1383, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event .title {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 1391, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event .location {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  color: #fff;
+  background-color: #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* line 1402, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.right .related_events .event:hover {
+  outline: 1px solid #2ff;
+}
+
+/* line 1405, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.conta .main .right {
+  padding: 25px;
+  float: right;
+  width: 30%;
+  background-color: #fff;
+  border-left: 1px solid  #ddd;
+  box-sizing: border-box;
+}
+
+/* line 1415, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.left .about_view .info {
+  margin-bottom: 40px;
+}
+
+/* line 1418, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.main .left .stats {
+  text-align: center;
+  margin-top: 100px;
+  border-top: 1px solid #aaa;
+  padding-top: 80px;
+}
+
+/* line 1424, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.main .left .stats > * {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+}
+
+/* line 1432, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room {
+  background-color: #333;
+  border: 1px solid #2ff;
+  padding: 8px;
+  color: #fff;
+  overflow: auto;
+  margin-bottom: 15px;
+}
+
+/* line 1440, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room:hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+/* line 1447, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room:hover .stat {
+  color: #333;
+}
+
+/* line 1450, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room .title {
+  float: left;
+  width: 500px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 1458, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.room .stat {
+  float: right;
+  color: #2ff;
+}
+
+/* line 1463, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.main .left .stats .num {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 1000px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #2ff;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+/* line 1477, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect {
+  margin-top: 50px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* line 1483, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect textarea {
+  font-size: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+/* line 1493, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect input[type='submit'] {
+  background-color: #333;
+  color: #fff;
+  float: right;
+  margin: 15px 0;
+  padding: 15px 20px;
+  display: block;
+  border: none;
+}
+
+/* line 1502, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect .user {
+  color: blue;
+  margin-bottom: 10px;
+}
+
+/* line 1506, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect .comments {
+  border-top: 1px solid #888;
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+/* line 1512, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect .comment {
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+/* line 1520, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.comment_sect .time {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* line 1525, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.showMore {
+  width: 110px;
+  background-color: #333;
+  color: #fff;
+  font-weight: 100;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* line 1537, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view input {
+  display: block;
+}
+
+/* line 1541, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view .title {
+  font-size: 17px;
+  padding: 9px;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+/* line 1548, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view .desc {
+  padding: 9px;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+  height: 300px;
+  font-size: 15px;
+}
+
+/* line 1557, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view #total {
+  font-size: 15px;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+/* line 1563, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.host_view input[type='submit'] {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 15px;
+  text-align: center;
+  width: 150px;
+  background-color: #333;
+  color: #fff;
+  font-size: 15px;
+  margin: auto;
+}
+
+/* line 1575, /Users/wayne/.Trash/learntocode/app/assets/stylesheets/custom.scss */
+.hide {
+  display: none;
+}
+
+
+.conta .main {
+  overflow: auto;
+}
+
+.conta .main .left, .conta .main .right {
+  min-height: 700px;
+}
+
+.conta .main .left {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 25px;
+}
+.right .related_events .events {
+  padding-top: 10px;
+}
+.right .related_events .event {
+  height: 150px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.right .related_events .event > * {
+  z-index: 10;
+  position: relative;
+}
+.right .related_events .event .img {
+  z-index: 1;
+  background-color: #333;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.right .related_events .event .title {
+  background-color: rgba(0,0,0,.4);  
+  padding: 8px;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.right .related_events .event .location {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  color: #fff;
+  background-color: #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.right .related_events .event:hover {
+  outline: 1px solid #2ff;
+}
+.conta .main .right {
+  
+  
+  padding: 25px;
+  float: right;
+  width: 30%;
+  background-color: #fff;
+  border-left: 1px solid  #ddd;
+  box-sizing: border-box;
+}  
+.left .about_view .info {
+  margin-bottom: 40px;
+}
+.main .left .stats {
+  text-align: center;
+  margin-top: 100px;
+  border-top: 1px solid #aaa;
+  padding-top: 80px;
+}
+.main .left .stats > * {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+}
+
+.room {
+  background-color: #333;
+  border: 1px solid #2ff;
+  padding: 8px;
+  color: #fff;
+  overflow: auto;
+  margin-bottom: 15px;
+}
+.room:hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+.room:hover .stat {
+  color: #333;
+}
+.room .title {
+  float: left;
+  width: 500px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.room .stat {
+  float: right;
+  color: #2ff;
+}
+
+.main .left .stats .num {
+  
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 1000px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #2ff;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.comment_sect {
+  margin-top: 50px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.comment_sect textarea {
+  font-size: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+.comment_sect input[type='submit'] {
+  background-color: #333;
+  color: #fff;
+  float: right;
+  margin: 15px 0;
+  padding:  15px 20px;
+  display: block;
+  border: none;
+}
+.comment_sect .user {
+  color: blue;
+  margin-bottom: 10px;
+}
+.comment_sect .comments {
+  border-top: 1px solid #888;
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+.comment_sect .comment {
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.comment_sect .time {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.showMore {
+  width: 110px;
+  background-color: #333;
+  color: #fff;
+  font-weight: 100;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.host_view input {
+  display: block;
+}
+
+.host_view .title {
+  font-size: 17px;
+  padding: 9px;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+.host_view .desc {
+  padding: 9px;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+  height: 300px;
+  font-size: 15px;
+}
+
+.host_view #total {
+  font-size: 15px;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.host_view input[type='submit'] {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 15px;
+  text-align: center;
+  width: 150px;
+  background-color: #333;
+  color: #fff;
+  font-size: 15px;
+  margin: auto;
+}
+.hide {
+  display: none;
+
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
