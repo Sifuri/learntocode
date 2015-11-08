@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 
+  if (typeof msgs == 'undefined')return;
   var msg_btn = $('.msg_btn');
   var msg_box = $('.msg_box');
   var box_state = false;
