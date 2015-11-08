@@ -55,8 +55,8 @@ $(document).ready(function() {
 	  			w.latest_rec = last_time;
 	  			w.msg_id = data[data.length-1].msg_id;
 	  			data.forEach(function(msgData){
-	  				addMessage(w,msgData.msg);
-            updateLastMsg(w.userId, msg);
+	  				addMessage(w, msgData.msg);
+            updateLastMsg(w.userId, msgData.msg);
 	  			});
 	  		});
   		});
@@ -100,10 +100,12 @@ $(document).ready(function() {
     var open = chatController.open_windows.some(function(e) {
       if (e.userId == +other_user.id) return true;
     });
-    var user = msgsObj[+other_user.id].user;
+    var user = new User(other_user.name, +other_user.id, []);
+    var user_msgs =  ((msgsObj || {}) [user.id] || {}).msgs || [];
+    user.msgs = user_msgs;
 
     if (!open) {
-      chatController.create_window(new User(user.name, user.id, msgsObj[user.id].msgs))
+      chatController.create_window(user)
     } else {
       var w = chatController.open_windows.filter(function(e) {
         if (e.userId == +user.id) return true;
@@ -153,6 +155,7 @@ $(document).ready(function() {
       	w.latest_rec = msg.about.created_at;
       	w.msg_id = msg.about.id;
       });
+      w.msg_id =  w.msg_id || 0;
       this.chat.append(c);
       var msgsEle = c.find('.msgs');
       msgsEle.scrollTop(msgsEle[0].scrollHeight);

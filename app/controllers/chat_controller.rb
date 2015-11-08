@@ -1,7 +1,8 @@
 class ChatController < ApplicationController
 
   def get
-  	latest = params[:latest] ||  "2014-11-05 02:52:00"
+    latest = params[:latest] ||  "2014-11-05 02:52:00"
+  	latest = "2014-11-05 02:52:00"
   	id = params[:giver]
   	msg_id = params[:msg_id]
 
