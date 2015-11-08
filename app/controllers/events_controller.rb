@@ -1,15 +1,17 @@
 class EventsController < ApplicationController
 	def index
-		meetup_api = MeetupApi.new
-		@events = meetup_api.open_events({zip: '11106'})["results"]
-		@custom_events = Event.all
+		if Event.search(params)
+			@events = Event.search(params).paginate(page: params[:page], per_page: 15)
+		else
+			@events = Event.paginate(page: params[:page], per_page: 15)
+		end
 	end
 
 	def show
 		@event = Event.find(params[:id])
 	end
 
-	def new 
+	def new
 		@event = Event.new
 	end
 
@@ -30,7 +32,7 @@ class EventsController < ApplicationController
 	private
 
 	def event_params
-		params.require(:event).permit(:title, :desc, :topic, :zip, :distance)
+		params.require(:event).permit(:title, :desc, :city, :state)
 	end
 
 end

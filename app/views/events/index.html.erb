@@ -1,7 +1,16 @@
 
 <div class="hero">
   <h3>Go to Tech Events <span class="color">Together</span></h3>
-  <input placeholder='search' class="search_bar"></input>
+  <form action="/events" method="get">
+    <input placeholder='search' class="search_bar" name="q"></input>
+  </form>
+  
+
+  
+
+
+
+
 
 <!--   <%= form_tag(events_path) do %>
     <%= select_tag "event[topic]", "<option>Tech</option>".html_safe %>
@@ -13,11 +22,15 @@
   <div class="search">
     <select name='options'>
       <option value='option-1'>Tech</option>
-    </select>
 
-    <label id='online_only'>
+    </select>
+    <label id="online_only"> Category </label>
+
+<!--     <label id='online_only'>
       <input type="checkbox" /> Online Only</label>
-   <label><input id = 'city' type="text" placeholder='City Here' /></label>
+   <label> -->
+
+   <input id = 'city' type="text" placeholder='City Here' /></label>
     within
  
 
@@ -37,8 +50,8 @@
   <% @events.each do |e| %>
     <div class="event">
     
-      <div class="title"><%= e["name"] %></div>
-      <div class="desc"><%= e["description"] %></div>
+      <div class="title"><%= e.title %></div>
+      <div class="desc"><%= e.desc %></div>
       <div class="img"><img src=  %> /></div>
       <div class="rooms">3</div>
   
@@ -47,14 +60,15 @@
      <% end %>
   </div>
   
-  
-  <ul class="pagination">
-    <li class="active">1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-  </ul>
+  <%= will_paginate @events %>
+
+<!-- <ul class="pagination">
+      <li class="active">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+  </ul> -->
 </div>
 
 
