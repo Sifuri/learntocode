@@ -14,6 +14,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :url
       t.integer :group_id
       t.integer :rsvp
+      t.string :time 
+      t.string :time_zone
 
       t.timestamps null: false
     end

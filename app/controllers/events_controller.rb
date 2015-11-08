@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 	def index
-		if Event.search(params)
+		if params[:q]
 			@events = Event.search(params).paginate(page: params[:page], per_page: 15)
 		else
 			@events = Event.paginate(page: params[:page], per_page: 15)
@@ -9,6 +9,7 @@ class EventsController < ApplicationController
 
 	def show
 		@event = Event.find(params[:id])
+		@comment = Comment.new
 	end
 
 	def new

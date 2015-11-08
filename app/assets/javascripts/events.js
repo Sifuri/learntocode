@@ -39,3 +39,39 @@
   
 // })();
 // });
+
+$(document).ready(function(){
+	fakeData('.event');
+fakeData('.room')
+fakeData('.comment');
+
+function fakeData(ele, n) {
+  var e = $(ele),
+    p = e.parent();
+  var i = n || 3;
+  while (i--) {
+    p.append(e.clone());
+  }
+}
+
+$("html, body").scrollTop($('.nav_meet').offset().top);
+
+
+// Sections code navgiation
+var sects = $('.left .hide');
+var navs = $('.nav_meet li');
+
+
+sects.first().removeClass('hide');
+
+navs.click(function() {
+  $(this).addClass('active').siblings().removeClass('active');
+  
+  var show = $(this).attr('data-sect');
+  sects.filter("#" + show).removeClass('hide').siblings().addClass('hide');
+});
+});
+
+// end
+
+

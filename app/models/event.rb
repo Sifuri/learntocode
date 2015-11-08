@@ -2,6 +2,8 @@ class Event < ActiveRecord::Base
 	has_many :user_events
 	has_many :users, through: :user_events
 
+	has_many :comments, through: :users 
+
 	def self.search(params)
 		all.where("lower(title) LIKE ?", params[:q].downcase+"%") if params[:q]
 	end
@@ -9,7 +11,7 @@ class Event < ActiveRecord::Base
 	def self.get_events
 		meetup_api = MeetupApi.new
 		meetup_api.open_events({category: 34})["results"].each do |e|
-			Event.create(title: e["name"], desc: e["description"], city: e["venue"]["city"], state: e["venue"]["state"], group_id: e["group"]["id"], rsvp: e["yes_rsvp_count"]) if e["venue"]
+			Event.create(title: e["name"], desc: e["description"], city: e["venue"]["city"], state: e["venue"]["state"], group_id: e["group"]["id"], rsvp: e["yes_rsvp_count"], time: e["time"], time_zone: e["time_zone"]) if e["venue"]
 		end
 	end
 

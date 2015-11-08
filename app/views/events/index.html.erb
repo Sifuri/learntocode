@@ -6,12 +6,6 @@
   </form>
   
 
-  
-
-
-
-
-
 <!--   <%= form_tag(events_path) do %>
     <%= select_tag "event[topic]", "<option>Tech</option>".html_safe %>
     <%= text_field_tag "event[zip]", "Enter Zip" %>
@@ -49,13 +43,10 @@
   <div class="events">
   <% @events.each do |e| %>
     <div class="event">
-    
-      <div class="title"><%= e.title %></div>
+      <div class="title"><%= link_to e.title, e %></div>
       <div class="desc"><%= e.desc %></div>
-      <div class="img"><img src=  %> /></div>
+      <div class="img"><img src="http://burlcok9sar.org/wp-content/uploads/2015/10/LogowithCCFINALhighres060515-291x300.jpg"  %> /></div>
       <div class="rooms">3</div>
-  
-
     </div>
      <% end %>
   </div>

@@ -1,6 +1,7 @@
 <div class="conta">
   <div class="hero_meet">
-    <div class="title">Stackoverflow beatup day</div>
+    <img src="http://www.acapma.com.au/wp-content/uploads/2015/02/ACA_CTD_conference_banner_1000x340.png"  >
+    <div class="title"><%= @event.title %></div>
   </div>
   <div class="nav_meet">
     <ul>
@@ -14,17 +15,15 @@
       <div class="views">
         <div id="about" class="about_view hide">
           <div class="info">
-            <strong class="location">Brooklyn, Ny</strong>
+            <strong class="location"><%= "#{@event.city}, #{@event.state}" %></strong>
             <strong class="time">2:00 am GTI</strong>
           </div>
           <div class="desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores rem, amet est. Cupiditate hic modi iste ipsa iure iusto, nostrum necessitatibus, dolore, quae magnam quo omnis dolores illum blanditiis numquam!Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Dolores rem, amet est. Cupiditate hic modi iste ipsa iure iusto, nostrum necessitatibus, dolore, quae magnam quo omnis dolores illum blanditiis numquam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores rem, amet est.
-            Cupiditate hic modi iste ipsa iure iusto, nostrum necessitatibus, dolore, quae magnam quo omnis dolores illum blanditiis numquam!
+            <%= @event.desc %>
           </div>
           <div class="stats">
             <div class="ppl_going">
-              <div class="num">35</div>
+              <div class="num"><%= @event.rsvp %></div>
               <div class="txt">People Going</div>
             </div>
             <div class="last_activity">
