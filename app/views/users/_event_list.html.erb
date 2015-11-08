@@ -1,9 +1,6 @@
-<div class="course">
-              <div class="title">Rails</div>
-            </div>
-            <div class="course">
-              <div class="title">Rails</div>
-            </div>
-            <div class="course">
-              <div class="title">Rails</div>
-            </div>
+<% @memberships.each do |m| %>
+	<div class="course">
+	     <div class="title"><%= m.group.event.title %></div>
+    </div>
+<% end %>
+  

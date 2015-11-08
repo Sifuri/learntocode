@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   resources :events do
     resources :comments 
+    resources :groups
   end
 
   resources :news, only: [:index]

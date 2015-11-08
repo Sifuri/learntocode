@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
-	has_many :user_events
-	has_many :users, through: :user_events
+	has_many :groups, dependent: :destroy
+	has_many :users, through: :groups
 
 	has_many :comments, dependent: :destroy
 
@@ -18,9 +18,9 @@ class Event < ActiveRecord::Base
 	def self.get_photos
 		meetup_api = MeetupApi.new
 		Event.all.each do |e|
-			if meetup_api.groups({group_id: e.group_id})["results"]
+			if meetup_api.groups({group_id: e.group_id})
 				meetup_api.groups({group_id: e.group_id})["results"].each do |x|
-					e.url = x["group_photo"]["thumb_link"] if x["group_photo"]
+					e.url = x["group_photo"]["photo_link"] if x["group_photo"]
 					e.save
 				end
 			end

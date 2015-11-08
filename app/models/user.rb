@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
-	# Events
-	has_many :user_events
-	has_many :users, through: :user_events
+	# Events & Group Relations
+	has_many :groups 
+	has_many :events, through: :groups 
 
 	# Courses
 	has_many :courses

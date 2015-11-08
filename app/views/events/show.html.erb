@@ -37,22 +37,28 @@
           </div>
 
         </div>
+
+
         <div id="lobby" class="lobby_view hide">
           <div class="rooms">
+          <% @event.groups.each do |g| %>
             <div class="room">
-              <div class="title">Let's go with techsin via suny</div>
+              <div class="title"><%= g.title %></div>
               <div class="stat">
-                <span class="open_pos">3</span> / <span class="total">5</span>
+                <span class="open_pos">3</span> / <span class="total"><%= g.qty %></span>
               </div>
             </div>
+          <% end %>
           </div>
         </div>
         <div id="host" class="host_view hide">
-            <input type="text" class='title'/>
-            <textarea name='desc' class='desc'></textarea>
-            <label for='total'>Total People</label>
-            <input id="total" type="number" min="1" max="20" />
-            <input type="submit" value='Create Room'/>
+          <%= form_for([@event, @event.groups.build]) do |f| %>
+           <%= f.text_field :title, class: "title"  %>
+           <%= f.text_area :desc, class: "desc" %> 
+           <%= f.label "Total People" %>
+           <%= f.number_field :qty, min: "1", max: "20" %>
+           <%= f.submit "Create Group" %>
+          <% end %>
         </div>
       </div>
       <div class="comment_sect">
@@ -86,11 +92,13 @@
       <div class="related_events">
         <h4>Related Events</h4>
         <div class="events">
+        <% @events.first(4).each do |event| %>
           <div class="event">
             <div class="img"></div>
-            <div class="title">Simple title description goes here</div>
+            <div class="title"><%= event.title %></div>
             <div class="location">Brooklyn, NY</div>
           </div>
+        <% end %>
         </div>
       </div>
     </div>

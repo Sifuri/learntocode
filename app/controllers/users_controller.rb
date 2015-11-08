@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@memberships = Membership.where("user_id = #{current_user.id} OR host = #{current_user.id}")
 		redirect_to root_path unless current_user 
 	end
 
