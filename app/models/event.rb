@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
 	has_many :user_events
 	has_many :users, through: :user_events
 
-	has_many :comments
+	has_many :comments, dependent: :destroy
 
 	def self.search(params)
 		all.where("lower(title) LIKE ?", params[:q].downcase+"%") if params[:q]
@@ -18,14 +18,13 @@ class Event < ActiveRecord::Base
 	def self.get_photos
 		meetup_api = MeetupApi.new
 		Event.all.each do |e|
-			meetup_api.groups({group_id: e.group_id})["results"].each do |x|
-				e.url = x["group_photo"]["highres_link"] if x["group_photo"]
-				e.save
+			if meetup_api.groups({group_id: e.group_id})["results"]
+				meetup_api.groups({group_id: e.group_id})["results"].each do |x|
+					e.url = x["group_photo"]["thumb_link"] if x["group_photo"]
+					e.save
+				end
 			end
 		end
 	end
 end
 
-# url: meetup_api.groups({group_id: e["group"]["id"]})["results"][0]["group_photo"]["highres_link"]
-			# # event_photo: meetup_api.groups({group_id: e["group"]["id"]})["group_photo"]["highres_link"]
-			# meetup_api.groups({group_id:8123202})["results"][0]["group_photo"]["highres_link"]

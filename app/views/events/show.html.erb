@@ -31,7 +31,7 @@
               <div class="txt">Last Activity</div>
             </div>
             <div class="comments">
-              <div class="num">325</div>
+              <div class="num"><%= @event.comments.count %></div>
               <div class="txt">Comments</div>
             </div>
           </div>
@@ -60,20 +60,22 @@
         <div class="input_sect">
           
         <%= form_for([@event, @event.comments.build]) do |f| %>
-          <textarea rows="4" cols="100">Leave a comment</textarea>
+         
+        <%= f.text_area :content, size: "100x4" %> 
           <%= f.submit "Submit" %>
         <% end %>
         </div>
 
 
 
-
         <div class="comments">
+        <% @event.comments.reverse.each do |comment| %>
           <div class="comment">
-            <div class="user">techsin</div>
-            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut expedita iure animi repudiandae. Voluptas, rerum in repellendus, cum, labore deserunt, recusandae doloribus amet error itaque architecto exercitationem ratione delectus ipsa.</div>
+            <div class="user"><%= comment.user ? comment.user.name : "Anonymous" %></div>
+            <div class="text"><%= comment.content %></div>
             <div class="time">3 days ago</div>
           </div>
+        <% end %>
         </div>
         <div class="showMore">
           Show More

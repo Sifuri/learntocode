@@ -24,9 +24,13 @@ ActiveRecord::Schema.define(version: 20151106154659) do
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "event_id"
+    t.string   "commenter"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "comments", ["event_id"], name: "index_comments_on_event_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -126,4 +130,5 @@ ActiveRecord::Schema.define(version: 20151106154659) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "comments", "events"
 end

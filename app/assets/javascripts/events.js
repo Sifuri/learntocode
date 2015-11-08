@@ -43,7 +43,7 @@
 $(document).ready(function(){
 	fakeData('.event');
 fakeData('.room')
-fakeData('.comment');
+// fakeData('.comment');
 
 function fakeData(ele, n) {
   var e = $(ele),

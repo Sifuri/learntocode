@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
 	has_many :bootcamps
 
 	# Comment Relations
-	has_many :comments
+	has_many :comments, dependent: :destroy
 
 
 	# Invitation Relations 
