@@ -1,0 +1,45 @@
+.lobby_show .right .join , .lobby_show .right .invite{
+ margin-bottom: 20px;
+ background-color: #333;
+ box-sizing: border-box;
+ padding: 20px;
+ text-align: center;
+ color: #2ff;
+ 
+}
+.lobby_show  .people_going {
+ margin-top: 20px;
+}
+.lobby_show  .people_going h4 {
+ padding-bottom: 8px;
+ border-bottom: 1px solid #ccc;
+ margin-bottom: 10px;
+}
+
+.lobby_show  .people_going .person {
+ width: 100px;
+ display: inline-block;
+ margin-bottom: 50px;
+ margin-right: 10px;
+}
+
+.lobby_show  .people_going .person img {
+ height: 100px;
+ background-color: #000;
+ width: 100%;
+ border: none;
+ outline: none;
+ border: 2px solid #2ff;
+ box-sizing: border-box;
+}
+.lobby_show  .people_going .person a {
+ text-decoration: none;
+}
+.lobby_show  .people_going .person .name {
+ text-decoration: none;
+ text-align: center;
+ color: #000;
+}
+.conta .main.lobby_show .right {
+ background-color: #ddd!important;
+}

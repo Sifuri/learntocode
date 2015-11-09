@@ -43,7 +43,7 @@
           <div class="rooms">
           <% @event.groups.each do |g| %>
             <div class="room">
-              <div class="title"><%= g.title %></div>
+              <div class="title"><%= link_to(g.title, g) %></div>
               <div class="stat">
                 <span class="open_pos">3</span> / <span class="total"><%= g.qty %></span>
               </div>

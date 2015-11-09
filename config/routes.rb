@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'chat/send' => "chat#sendMsg"
 
   resources :users
+  resources :groups
   
   resources :events do
     resources :comments 
