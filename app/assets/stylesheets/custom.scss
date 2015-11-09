@@ -2301,7 +2301,7 @@ span.mySelect {
 .events {
     font-size: 0;
     border-top: 2px solid #2ff;
-    margin-top: 100px;
+
 }
 
 .event {
@@ -2337,6 +2337,9 @@ span.mySelect {
 }
 
 .event .img {
+
+    background-position: center center;
+    background-size: cover;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -2364,6 +2367,11 @@ span.mySelect {
     overflow: hidden;
     font-size: 22px;
     transition: margin .5s;
+}
+
+.index .event .title a  {
+    color: white;
+    text-decoration: none;
 }
 
 .event:hover .title {
