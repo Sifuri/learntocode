@@ -41,12 +41,14 @@
 </div>
 
 <div class="cont">
-  <div class="events">
+  <div class="events index">
   <% @events.each do |e| %>
     <div class="event">
       <div class="title"><%= link_to e.title, e %></div>
       <div class="desc"><%= e.desc.html_safe if e.desc %></div>
-      <div class="img"><img src=<%= e.url %> /></div>
+      <% url = e.url %>
+      <% url = "http://services.fit.edu/catalog/src/uploads/catalog/images/161/headers/human-resources.jpg" unless url %>
+      <div class="img" style= 'background-image: url(<%= url %>);'> </div>
       <div class="rooms">3</div>
     </div>
      <% end %>
