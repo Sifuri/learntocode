@@ -1,3 +1,4 @@
+
 <div class="conta">
   <div class="hero_meet">
     <div class="title"><%= @group.event.title %></div>
@@ -61,3 +62,52 @@
   </div>
 
 </div>
+
+<div class="popup_lobby hide">
+  <div class="dialog">
+    <h2>Invite Friends</h2>
+    <form action="#">
+      <ul>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+        <li><label><input type="checkbox"> <img src="#" alt="">Friend Name</label></li>
+      </ul>
+      <input type="submit" value='invite'>
+    </form>
+  </div>
+</div>
+
+
+<script>
+
+var popup = $('.popup_lobby');
+var btn = $('.btn.invite');
+
+btn.click(showPopup);
+
+popup.click(function(e){
+  if ($(e.target).is($(this))) {
+    popup.hide();
+  }
+
+});
+
+
+function showPopup() {
+  popup.show();
+}
+
+function hidePopup() {
+  popup.hide();
+}
+
+</script>
