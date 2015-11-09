@@ -45,7 +45,7 @@
             <div class="room">
               <div class="title"><%= link_to(g.title, g) %></div>
               <div class="stat">
-                <span class="open_pos">3</span> / <span class="total"><%= g.qty %></span>
+                <span class="open_pos"><%= g.memberships.count %></span> / <span class="total"><%= g.qty %></span>
               </div>
             </div>
           <% end %>

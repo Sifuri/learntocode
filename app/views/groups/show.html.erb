@@ -4,10 +4,10 @@
   </div>
   <div class="main lobby_show">
     <div class="left">
-      <h3>Lobby Title</h3>
-      <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum deleniti esse saepe sint veritatis non. Optio vel in quo, sint cupiditate accusamus id, voluptatibus quia voluptatum perferendis! Beatae, vel quaerat!</p>
+      <h3><%= @group.title %></h3>
+      <p class="desc"><%= @group.desc.html_safe %></p>
       <div class="people_going">
-        <h4>People Going <span class="amount">(3)</span></h4>
+        <h4>People Going <span class="amount"><%= @group.users.count %></span></h4>
         <div class="people">
 
           <div class="person">
