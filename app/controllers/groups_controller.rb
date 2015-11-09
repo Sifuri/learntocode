@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
 		if @group.save 
 			redirect_to event_path(@event)
 		else
-			render 'events/show'
+			render 'groups/show'
 		end
 	end
 

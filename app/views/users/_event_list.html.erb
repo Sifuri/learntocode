@@ -1,6 +1,6 @@
-<% @memberships.each do |m| %>
+<% current_user.memberships.each do |m| %>
 	<div class="course">
-	     <div class="title"><%= m.group.event.title %></div>
+	     <div class="title"><%= link_to m.group.event.title, m.group %></div>
     </div>
 <% end %>
   

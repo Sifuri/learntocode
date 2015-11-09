@@ -49,9 +49,17 @@ class User < ActiveRecord::Base
 	# Comment Relations
 	has_many :comments, dependent: :destroy
 
+	# Group Comment Relations
+	has_many :group_comments, dependent: :destroy 
+
 
 	# Invitation Relations 
 	has_many :invitations 
+
+	# Memberships
+
+	has_many :memberships
+	has_many :groups, through: :memberships
 	
 
 

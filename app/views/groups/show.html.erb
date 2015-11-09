@@ -10,45 +10,34 @@
       <div class="people_going">
         <h4>People Going <span class="amount"><%= @group.users.count %></span></h4>
         <div class="people">
-
+        <% @group.users.each do |user| %>
           <div class="person">
             <a href="#">
-              <img src="" />
-              <div class="name">Umer</div>
+              <%= link_to((gravatar_for user, size: 96), user )%>
+              <div class="name"><%= user.name %></div>
             </a>
           </div>
-          <div class="person">
-            <a href="#">
-              <img src="" />
-              <div class="name">Umer</div>
-            </a>
-          </div>
-          <div class="person">
-            <a href="#">
-              <img src="" />
-              <div class="name">Umer</div>
-            </a>
-          </div>
-          <div class="person">
-            <a href="#">
-              <img src="" />
-              <div class="name">Umer</div>
-            </a>
-          </div>
-
+        <% end %>
         </div>
       </div>
       <div class="comment_sect">
+
         <div class="input_sect">
-          <textarea rows="4" cols="100">Leave a comment</textarea>
-          <input type="submit" />
+          <%= form_for([@group, @group.group_comments.build]) do |f| %>
+            <%= f.text_area :content, size: "100x4" %> 
+            <%= f.submit "Submit Comment" %>
+          <% end %>
         </div>
+
+
         <div class="comments">
+        <% @group.group_comments.each do |comment| %>
           <div class="comment">
-            <div class="user">techsin</div>
-            <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut expedita iure animi repudiandae. Voluptas, rerum in repellendus, cum, labore deserunt, recusandae doloribus amet error itaque architecto exercitationem ratione delectus ipsa.</div>
+            <div class="user"><%= comment.user.name if comment.user %></div>
+            <div class="text"><%= comment.content %></div>
             <div class="time">3 days ago</div>
           </div>
+        <% end %>
         </div>
         <div class="showMore">
           Show More
@@ -56,8 +45,15 @@
       </div>
     </div>
     <div class="right">
-      <div class="btn join">Join Room</div>
-            <div class="btn invite">Invite Someone</div>
+    <% unless @group.users.include? current_user %>
+    <%= form_for(current_user.memberships.build(group_id: @group.id)) do |f| %>
+      <%= hidden_field_tag :group_id, value = @group.id %>
+     <%= submit_tag "Join", class: "btn join" %>
+    <% end %>
+    <% else %>
+    <div class="btn join">Leave</div>
+    <% end %>
+         <div class="btn invite">Invite Someone</div>
     </div>
   </div>
 
