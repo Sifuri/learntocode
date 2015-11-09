@@ -35,6 +35,7 @@
       <option value='10'>10 miles</option>
       <option value='50'>50 miles</option>
     </select>
+
     <input type="submit" />
   </div>
 </div>
@@ -44,7 +45,7 @@
   <% @events.each do |e| %>
     <div class="event">
       <div class="title"><%= link_to e.title, e %></div>
-      <div class="desc"><%= e.desc %></div>
+      <div class="desc"><%= e.desc.html_safe if e.desc %></div>
       <div class="img"><img src=<%= e.url %> /></div>
       <div class="rooms">3</div>
     </div>

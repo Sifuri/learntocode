@@ -1,6 +1,6 @@
 <div class="conta">
   <div class="hero_meet">
-    <img src="http://www.acapma.com.au/wp-content/uploads/2015/02/ACA_CTD_conference_banner_1000x340.png"  >
+    <img src="http://services.fit.edu/catalog/src/uploads/catalog/images/161/headers/human-resources.jpg"  >
     <div class="title"><%= @event.title %></div>
   </div>
   <div class="nav_meet">
@@ -19,7 +19,7 @@
             <strong class="time">2:00 am GTI</strong>
           </div>
           <div class="desc">
-            <%= @event.desc %>
+            <%= @event.desc.html_safe if @event.desc %>
           </div>
           <div class="stats">
             <div class="ppl_going">
@@ -53,7 +53,9 @@
         </div>
         <div id="host" class="host_view hide">
           <%= form_for([@event, @event.groups.build]) do |f| %>
+          <%= f.label "Title: " %>
            <%= f.text_field :title, class: "title"  %>
+           <%= f.label "Description" %>
            <%= f.text_area :desc, class: "desc" %> 
            <%= f.label "Total People" %>
            <%= f.number_field :qty, min: "1", max: "20" %>
@@ -68,7 +70,7 @@
         <%= form_for([@event, @event.comments.build]) do |f| %>
          
         <%= f.text_area :content, size: "100x4" %> 
-          <%= f.submit "Submit" %>
+          <%= f.submit "Submit Comment" %>
         <% end %>
         </div>
 
@@ -92,9 +94,9 @@
       <div class="related_events">
         <h4>Related Events</h4>
         <div class="events">
-        <% @events.first(4).each do |event| %>
+        <% @events.take(3).each do |event| %>
           <div class="event">
-            <div class="img"></div>
+            <div class="img"><img src="#{event.url}" ></div>
             <div class="title"><%= event.title %></div>
             <div class="location">Brooklyn, NY</div>
           </div>

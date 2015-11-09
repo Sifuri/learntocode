@@ -1,4 +1,10 @@
 class GroupsController < ApplicationController
+
+	def show
+		@group = Group.find(params[:id])
+	end
+
+
 	def create
 		@event = Event.find(params[:event_id])
 		@group = @event.groups.create(group_params)
