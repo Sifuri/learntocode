@@ -43,3 +43,65 @@
 .conta .main.lobby_show .right {
  background-color: #ddd!important;
 }
+
+.popup_lobby {
+	background-color: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 99999;
+}
+
+.popup_lobby .dialog {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background-color: #FFF;
+	width: 640px;
+	padding: 25px;
+	box-sizing: border-box;
+	transform: translate(-50%,-50%);
+}
+
+.popup_lobby .dialog  h2 {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+.popup_lobby .dialog ul {
+	text-align: center;
+	max-height: 550px;
+}
+.popup_lobby .dialog li {
+	list-style: none;
+	padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	display: inline-block;
+	width: 160px;
+	white-space: nowrap;
+	overflow: hidden;
+	margin: 0 8px;
+}
+
+.popup_lobby .dialog img {
+	height: 30px;
+	width: 30px;
+	background-color: #ddd;
+	vertical-align: middle;
+	margin: 0 10px;
+
+}
+
+.popup_lobby .dialog input[type='submit'] {
+    border: none;
+    background: #333;
+    color: #2ff;
+    padding: 20px;
+    font-size: 15px;
+    margin: 25px auto;
+    width: 150px;
+    display: block;
+}
