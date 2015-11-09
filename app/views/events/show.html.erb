@@ -79,7 +79,7 @@
         <div class="comments">
         <% @event.comments.reverse.each do |comment| %>
           <div class="comment">
-            <div class="user"><%= comment.user ? comment.user.name : "Anonymous" %></div>
+            <div class="user"><%= comment.user.name if comment.user  %></div>
             <div class="text"><%= comment.content %></div>
             <div class="time">3 days ago</div>
           </div>
@@ -92,13 +92,14 @@
     </div>
     <div class="right">
       <div class="related_events">
+      <% binding.pry %>
         <h4>Related Events</h4>
         <div class="events">
-        <% @events.take(3).each do |event| %>
+        <% @events.take(4).each do |event| %>
           <div class="event">
             <div class="img"><img src="#{event.url}" ></div>
             <div class="title"><%= event.title %></div>
-            <div class="location">Brooklyn, NY</div>
+            <div class="location"><%= event.city %>, <%= event.state %></div>
           </div>
         <% end %>
         </div>

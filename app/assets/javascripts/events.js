@@ -46,8 +46,8 @@ $(document).ready(function() {
   }
 
   function go() {
-    fakeData('.event');
-    fakeData('.room')
+    // fakeData('.event');
+    // fakeData('.room')
 
     function fakeData(ele, n) {
       var e = $(ele),
