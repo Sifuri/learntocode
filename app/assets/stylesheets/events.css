@@ -211,6 +211,9 @@
   font-size: 15px;
 }
 
+.host_view .desc p {
+  margin: 10px 0;
+}
 .host_view #total {
   font-size: 15px;
   padding: 8px;
